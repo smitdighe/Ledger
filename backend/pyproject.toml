@@ -1,0 +1,57 @@
+[project]
+name = "ledger"
+version = "0.1.0"
+description = "Diagnostic agent platform — FastAPI + LangGraph + Celery + observability stack"
+requires-python = ">=3.11,<3.14"
+dependencies = [
+    # web / api
+    "fastapi>=0.115",
+    "uvicorn[standard]>=0.34",
+    "pydantic>=2.10",
+    "pydantic-settings>=2.7",
+    "httpx>=0.28",
+    "python-dotenv>=1.0",
+    # persistence
+    "sqlalchemy>=2.0",
+    "alembic>=1.14",
+    "asyncpg>=0.30",
+    "psycopg[binary]>=3.2",
+    "clickhouse-connect>=0.8",
+    # task queue
+    "celery>=5.4",
+    "redis>=5.2",
+    "nest-asyncio>=1.6",
+    # agents / llm
+    "langgraph>=0.2",
+    "langchain-core>=0.3",
+    "ollama>=0.4",
+    "google-generativeai>=0.8",
+    "groq>=0.13",
+    "cerebras-cloud-sdk>=1.15",
+    # observability / eval
+    "langfuse>=2.57",
+    "ragas>=0.2",
+    "deepeval>=2.0",
+    "structlog>=24.4",
+    "prometheus-client>=0.21",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.3",
+    "pytest-asyncio>=0.25",
+]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["app"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+# Module-level async singletons (redis.asyncio, SQLAlchemy async engine) bind to
+# one loop; share a single session-scoped loop so tests don't cross loops.
+asyncio_default_fixture_loop_scope = "session"
+asyncio_default_test_loop_scope = "session"

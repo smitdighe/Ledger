@@ -1,0 +1,20 @@
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+
+scrape_configs:
+  - job_name: prometheus
+    static_configs:
+      - targets: ["localhost:9090"]
+
+  # FastAPI app exposes prometheus-client metrics on /metrics.
+  # host.docker.internal resolves to the docker host from inside the container.
+  - job_name: ledger-api
+    metrics_path: /metrics
+    static_configs:
+      - targets: ["host.docker.internal:8000"]
+
+  - job_name: langfuse-web
+    metrics_path: /api/metrics
+    static_configs:
+      - targets: ["langfuse-web:3000"]
