@@ -1,0 +1,82 @@
+envVarGroups:
+  - name: ledger-backend-env
+    envVars:
+      - key: DATABASE_URL
+        sync: false
+      - key: ALEMBIC_DATABASE_URL
+        sync: false
+      - key: REDIS_URL
+        sync: false
+      - key: CELERY_BROKER_URL
+        sync: false
+      - key: CELERY_RESULT_BACKEND
+        sync: false
+      - key: CLICKHOUSE_HOST
+        sync: false
+      - key: CLICKHOUSE_PORT
+        sync: false
+      - key: CLICKHOUSE_NATIVE_PORT
+        sync: false
+      - key: CLICKHOUSE_USER
+        sync: false
+      - key: CLICKHOUSE_PASSWORD
+        sync: false
+      - key: CLICKHOUSE_DB
+        sync: false
+      - key: LANGFUSE_HOST
+        sync: false
+      - key: LANGFUSE_PUBLIC_KEY
+        sync: false
+      - key: LANGFUSE_SECRET_KEY
+        sync: false
+      - key: CEREBRAS_API_KEY
+        sync: false
+      - key: GROQ_API_KEY
+        sync: false
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: OLLAMA_HOST
+        sync: false
+      - key: ADMIN_API_KEY
+        sync: false
+      - key: INGESTION_API_KEY
+        sync: false
+      # frontend URL isn't known until Vercel deploy exists — set post-deploy.
+      - key: ALLOWED_ORIGINS
+        sync: false
+      - key: APP_ENV
+        value: production
+      - key: LOG_LEVEL
+        value: INFO
+
+services:
+  # ---------------------------------------------------------------------------
+  # FastAPI backend — web service, free tier.
+  # ---------------------------------------------------------------------------
+  - type: web
+    name: ledger-backend
+    runtime: python
+    rootDir: backend
+    plan: free
+    buildCommand: pip install -e .
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    preDeployCommand: alembic upgrade head
+    healthCheckPath: /health
+    envVarGroups:
+      - ledger-backend-env
+
+  # ---------------------------------------------------------------------------
+  # Celery worker does NOT run on Render — no free worker instance type here.
+  # It runs on a self-managed Oracle Cloud Always Free VM instead (Docker),
+  # using the Procfile's `worker:` command against the same Upstash Redis /
+  # Neon Postgres the backend above uses. See deploy guide for VM setup.
+  # ---------------------------------------------------------------------------
+  # - type: worker
+  #   name: ledger-worker
+  #   runtime: python
+  #   rootDir: backend
+  #   plan: starter
+  #   buildCommand: pip install -e .
+  #   startCommand: celery -A app.core.celery_app:celery_app worker -B --loglevel=info -Q default,ingestion,eval,diagnostic
+  #   envVarGroups:
+  #     - ledger-backend-env
