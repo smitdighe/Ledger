@@ -1,0 +1,156 @@
+{
+  "_provenance": "mode-a",
+  "_how": "video/tools/run_scenarios.py: disposable postgres:16-alpine + redis:7-alpine, alembic upgrade head, scenarios replayed from backend/tests/integration/test_diagnostic_swarm.py with use_llm=False",
+  "path": "/api/v1/incidents/5a7fa2a0-1d26-4a8e-a558-dd6341f1ac7a",
+  "params": null,
+  "status": 200,
+  "body": {
+    "id": "5a7fa2a0-1d26-4a8e-a558-dd6341f1ac7a",
+    "trace_id": "swarm-prompt",
+    "root_cause": "prompt_regression",
+    "status": "resolved",
+    "classification_confidence": 1.0,
+    "remediation_action": "rollback:already_applied",
+    "created_at": "2026-09-29T13:37:57.472120+00:00",
+    "resolved_at": "2026-09-29T13:37:57.457159+00:00",
+    "diagnostic_trail": {
+      "trail": [
+        {
+          "data": {
+            "targets": [
+              "prompt_diagnostic",
+              "model_diagnostic"
+            ],
+            "ambiguous": false,
+            "candidates": [
+              "prompt_regression",
+              "model_degradation"
+            ],
+            "confidence": 0.75,
+            "llm_opinion": null,
+            "retrieval_strength": 0.1,
+            "generation_strength": 0.75
+          },
+          "node": "classifier",
+          "summary": "targets=['prompt_diagnostic', 'model_diagnostic'] conf=0.75 ambiguous=False"
+        },
+        {
+          "data": {
+            "tier_quality": 0.9,
+            "generator_tier": "groq",
+            "all_tier_scores": {
+              "groq": 0.9
+            },
+            "generator_model": "groq/llama-3.1-8b",
+            "best_other_tier_quality": null
+          },
+          "node": "model_diagnostic",
+          "summary": "model_degradation confidence=0.00 (tier=groq score=0.9)"
+        },
+        {
+          "data": {
+            "drop": 0.65,
+            "changed_at": "2026-09-28T13:37:56.937194+00:00",
+            "prompt_name": "rag_default",
+            "previous_version": 1,
+            "regressed_version": 2,
+            "faithfulness_after": 0.25,
+            "faithfulness_before": 0.9
+          },
+          "node": "prompt_diagnostic",
+          "summary": "prompt_regression confidence=1.00 (drop=0.65 after v2)"
+        },
+        {
+          "data": {
+            "chosen": {
+              "node": "prompt_diagnostic",
+              "confidence": 1.0,
+              "supporting_evidence": {
+                "drop": 0.65,
+                "changed_at": "2026-09-28T13:37:56.937194+00:00",
+                "prompt_name": "rag_default",
+                "previous_version": 1,
+                "regressed_version": 2,
+                "faithfulness_after": 0.25,
+                "faithfulness_before": 0.9
+              },
+              "root_cause_candidate": "prompt_regression"
+            },
+            "reason": "selected"
+          },
+          "node": "decision",
+          "summary": "chose prompt_regression @ 1.00"
+        },
+        {
+          "data": {
+            "error": null,
+            "tool_result": {
+              "tool": "rollback",
+              "status": "already_applied",
+              "changed": false,
+              "prompt_name": "rag_default",
+              "active_version": 1
+            }
+          },
+          "node": "remediation",
+          "summary": "action=rollback:already_applied status=resolved"
+        }
+      ],
+      "findings": [
+        {
+          "node": "model_diagnostic",
+          "confidence": 0.0,
+          "supporting_evidence": {
+            "tier_quality": 0.9,
+            "generator_tier": "groq",
+            "all_tier_scores": {
+              "groq": 0.9
+            },
+            "generator_model": "groq/llama-3.1-8b",
+            "best_other_tier_quality": null
+          },
+          "root_cause_candidate": null
+        },
+        {
+          "node": "prompt_diagnostic",
+          "confidence": 1.0,
+          "supporting_evidence": {
+            "drop": 0.65,
+            "changed_at": "2026-09-28T13:37:56.937194+00:00",
+            "prompt_name": "rag_default",
+            "previous_version": 1,
+            "regressed_version": 2,
+            "faithfulness_after": 0.25,
+            "faithfulness_before": 0.9
+          },
+          "root_cause_candidate": "prompt_regression"
+        }
+      ],
+      "tool_result": {
+        "tool": "rollback",
+        "status": "already_applied",
+        "changed": false,
+        "prompt_name": "rag_default",
+        "active_version": 1
+      },
+      "classification": {
+        "targets": [
+          "prompt_diagnostic",
+          "model_diagnostic"
+        ],
+        "ambiguous": false,
+        "candidates": [
+          "prompt_regression",
+          "model_degradation"
+        ],
+        "confidence": 0.75,
+        "llm_opinion": null,
+        "retrieval_strength": 0.1,
+        "generation_strength": 0.75
+      },
+      "chosen_confidence": 1.0,
+      "chosen_root_cause": "prompt_regression",
+      "needs_human_review": false
+    }
+  }
+}

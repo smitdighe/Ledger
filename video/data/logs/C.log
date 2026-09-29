@@ -1,0 +1,10 @@
+2026-09-29 19:08:03 [info     ] graph.run                      eval_results={'faithfulness': 0.18, 'answer_relevance': 0.2, 'hallucination': 0.8, 'retrieval_precision': 0.18, 'context_recall': 0.2} signal=eval_flag trace_id=swarm-mixed
+2026-09-29 19:08:03 [info     ] node.classifier                ambiguous=True candidates=['retrieval_failure', 'index_staleness', 'prompt_regression', 'model_degradation'] confidence=0.85 generation_strength=0.82 llm_opinion=None retrieval_strength=0.85 targets=['retrieval_diagnostic', 'index_diagnostic', 'prompt_diagnostic', 'model_diagnostic'] trace_id=swarm-mixed
+2026-09-29 19:08:03 [info     ] node.retrieval_diagnostic      confidence=0.85 context_recall=0.2 retrieval_precision=0.18 retrieval_score=0.15 trace_id=swarm-mixed weakest_signal=0.15
+2026-09-29 19:08:04 [info     ] node.model_diagnostic          all_tier_scores={'ollama': 0.2, 'groq': 0.9} best_other_tier_quality=0.9 confidence=1.0 generator_model=llama3.2:3b generator_tier=ollama tier_quality=0.2 trace_id=swarm-mixed
+2026-09-29 19:08:04 [info     ] node.prompt_diagnostic         changed_at=2026-09-28T13:37:56.937194+00:00 confidence=1.0 drop=0.675 faithfulness_after=0.225 faithfulness_before=0.9 previous_version=1 prompt_name=rag_default regressed_version=2 trace_id=swarm-mixed
+2026-09-29 19:08:06 [warning  ] index_diagnostic.trend_query_failed error='Network Error: Cannot connect to host 127.0.0.1:1 ssl:default [The remote computer refused the network connection]'
+2026-09-29 19:08:06 [info     ] node.index_diagnostic          confidence=0.34 ever_reindexed=True index_age_seconds=20.270071 index_name=default recent_retrieval_trend=None stale=False this_retrieval_score=0.15 trace_id=swarm-mixed
+2026-09-29 19:08:06 [info     ] node.decision                  outcome=mixed_signal trace_id=swarm-mixed
+2026-09-29 19:08:06 [info     ] incident.written               action=human_review_required incident_id=062b3e8a-4e87-431f-9f01-f1d95152e709 root=None status=open trace_id=swarm-mixed
+2026-09-29 19:08:06 [info     ] node.human_review              incident_id=062b3e8a-4e87-431f-9f01-f1d95152e709 trace_id=swarm-mixed

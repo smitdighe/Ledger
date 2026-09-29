@@ -1,0 +1,11 @@
+{
+  "_provenance": "mode-a",
+  "_how": "video/tools/run_scenarios.py: disposable postgres:16-alpine + redis:7-alpine, alembic upgrade head, scenarios replayed from backend/tests/integration/test_diagnostic_swarm.py with use_llm=False",
+  "path": "/api/v1/health",
+  "params": null,
+  "status": 200,
+  "body": {
+    "status": "ok",
+    "env": "local"
+  }
+}

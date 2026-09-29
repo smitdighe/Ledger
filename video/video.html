@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1080, height=1350">
+<meta name="author" content="Smit Dighe">
+<title>Ledger launch video</title>
+<link rel="stylesheet" href="node_modules/@fontsource-variable/geist/index.css">
+<link rel="stylesheet" href="node_modules/@fontsource-variable/geist-mono/index.css">
+<link rel="stylesheet" href="src/styles.css">
+<script type="importmap">
+{
+  "imports": {
+    "gsap": "./node_modules/gsap/index.js",
+    "gsap/": "./node_modules/gsap/"
+  }
+}
+</script>
+</head>
+<body>
+<div id="stage" aria-label="Ledger launch video"></div>
+<div id="dev" hidden>
+  <input id="scrub" type="range" min="0" max="56" step="0.0333333" value="0">
+  <output id="clock">0.00</output>
+</div>
+<script type="module" src="src/main.js"></script>
+</body>
+</html>

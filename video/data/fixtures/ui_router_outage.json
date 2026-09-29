@@ -1,0 +1,61 @@
+{
+  "_provenance": "simulated-outage",
+  "_how": "api_router_config.json with every tier available and cached_health set: cerebras/groq/gemini false (failed probe), ollama true. Not a recorded state; captions phrase it conditionally.",
+  "status": 200,
+  "body": {
+    "tiers": [
+      {
+        "tier": "cerebras",
+        "role": "low-latency root-cause triage / sub-second classification",
+        "priority": 1,
+        "enabled": true,
+        "available": true,
+        "cached_health": false,
+        "last_health_check": null,
+        "last_latency_ms": null,
+        "rpm": 30,
+        "rpd": 14400,
+        "default_model": "llama3.1-8b"
+      },
+      {
+        "tier": "groq",
+        "role": "fast high-throughput general inference",
+        "priority": 2,
+        "enabled": true,
+        "available": true,
+        "cached_health": false,
+        "last_health_check": null,
+        "last_latency_ms": null,
+        "rpm": 30,
+        "rpd": 14400,
+        "default_model": "llama-3.1-8b-instant"
+      },
+      {
+        "tier": "gemini",
+        "role": "cross-validation / secondary judge",
+        "priority": 3,
+        "enabled": true,
+        "available": true,
+        "cached_health": false,
+        "last_health_check": null,
+        "last_latency_ms": null,
+        "rpm": 15,
+        "rpd": 1500,
+        "default_model": "gemini-2.0-flash"
+      },
+      {
+        "tier": "ollama",
+        "role": "zero-cost, zero-rate-limit local fallback (guaranteed floor)",
+        "priority": 4,
+        "enabled": true,
+        "available": true,
+        "cached_health": true,
+        "last_health_check": null,
+        "last_latency_ms": null,
+        "rpm": 100000,
+        "rpd": null,
+        "default_model": "llama3.2:3b"
+      }
+    ]
+  }
+}

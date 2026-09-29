@@ -1,0 +1,161 @@
+{
+  "_provenance": "mode-a",
+  "_how": "video/tools/run_scenarios.py: disposable postgres:16-alpine + redis:7-alpine, alembic upgrade head, scenarios replayed from backend/tests/integration/test_diagnostic_swarm.py with use_llm=False",
+  "seed": 85,
+  "script": "backend/scripts/seed_synthetic_traces.py:_make_trace",
+  "fault": "hallucination",
+  "question": "What is the refund policy?",
+  "span_name": "rag.generation",
+  "model": "groq/llama-3.1-8b",
+  "completion": "Refunds are processed via carrier pigeon within three lunar cycles.",
+  "generation_latency_ms": 376,
+  "retrieval_latency_ms": 96,
+  "retrieval_score": 0.803,
+  "retrieved_documents": [
+    "Our refund policy allows customers to request a full refund within 30 days of purchase.",
+    "After 30 days, purchases are considered final and non-refundable."
+  ],
+  "status": 2,
+  "otlp": {
+    "resourceSpans": [
+      {
+        "resource": {
+          "attributes": [
+            {
+              "key": "service.name",
+              "value": {
+                "stringValue": "ledger-synthetic"
+              }
+            }
+          ]
+        },
+        "scopeSpans": [
+          {
+            "scope": {
+              "name": "ledger.ingestion"
+            },
+            "spans": [
+              {
+                "traceId": "9a79106bb74241fea52e3bbf2c6790fc",
+                "spanId": "da0b94c552fe1a7c",
+                "parentSpanId": "",
+                "name": "rag.request",
+                "startTimeUnixNano": "1790689101642348400",
+                "endTimeUnixNano": "1790689102117348400",
+                "status": {
+                  "code": 2
+                },
+                "attributes": [
+                  {
+                    "key": "rag.question",
+                    "value": {
+                      "stringValue": "What is the refund policy?"
+                    }
+                  },
+                  {
+                    "key": "ledger.fault",
+                    "value": {
+                      "stringValue": "hallucination"
+                    }
+                  }
+                ]
+              },
+              {
+                "traceId": "9a79106bb74241fea52e3bbf2c6790fc",
+                "spanId": "7ec780abf3ac33b5",
+                "parentSpanId": "da0b94c552fe1a7c",
+                "name": "rag.retrieval",
+                "startTimeUnixNano": "1790689101643348400",
+                "endTimeUnixNano": "1790689101739348400",
+                "status": {
+                  "code": 0
+                },
+                "attributes": [
+                  {
+                    "key": "retrieval.score",
+                    "value": {
+                      "doubleValue": 0.803
+                    }
+                  },
+                  {
+                    "key": "retrieval.num_docs",
+                    "value": {
+                      "intValue": "2"
+                    }
+                  },
+                  {
+                    "key": "retrieval.top_k",
+                    "value": {
+                      "intValue": "5"
+                    }
+                  },
+                  {
+                    "key": "retrieval.documents",
+                    "value": {
+                      "stringValue": "[\"Our refund policy allows customers to request a full refund within 30 days of purchase.\", \"After 30 days, purchases are considered final and non-refundable.\"]"
+                    }
+                  }
+                ]
+              },
+              {
+                "traceId": "9a79106bb74241fea52e3bbf2c6790fc",
+                "spanId": "7c6db86a1de10c74",
+                "parentSpanId": "da0b94c552fe1a7c",
+                "name": "rag.generation",
+                "startTimeUnixNano": "1790689101740348400",
+                "endTimeUnixNano": "1790689102116348400",
+                "status": {
+                  "code": 2
+                },
+                "attributes": [
+                  {
+                    "key": "gen_ai.request.model",
+                    "value": {
+                      "stringValue": "groq/llama-3.1-8b"
+                    }
+                  },
+                  {
+                    "key": "gen_ai.prompt",
+                    "value": {
+                      "stringValue": "Context + question: What is the refund policy?"
+                    }
+                  },
+                  {
+                    "key": "gen_ai.completion",
+                    "value": {
+                      "stringValue": "Refunds are processed via carrier pigeon within three lunar cycles."
+                    }
+                  },
+                  {
+                    "key": "gen_ai.usage.input_tokens",
+                    "value": {
+                      "intValue": "996"
+                    }
+                  },
+                  {
+                    "key": "gen_ai.usage.output_tokens",
+                    "value": {
+                      "intValue": "108"
+                    }
+                  },
+                  {
+                    "key": "gen_ai.usage.total_tokens",
+                    "value": {
+                      "intValue": "695"
+                    }
+                  },
+                  {
+                    "key": "ledger.hallucination_suspected",
+                    "value": {
+                      "boolValue": true
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "_provenance": "mode-a",
+  "_how": "video/tools/run_scenarios.py: disposable postgres:16-alpine + redis:7-alpine, alembic upgrade head, scenarios replayed from backend/tests/integration/test_diagnostic_swarm.py with use_llm=False",
+  "accepted": {
+    "status": 200,
+    "body": {
+      "status": "accepted",
+      "task_id": "fb71353b-e2dd-4327-b96d-d93122ccc961",
+      "accepted_spans": 3,
+      "traces": 1,
+      "trace_ids": [
+        "9a79106bb74241fea52e3bbf2c6790fc"
+      ]
+    }
+  },
+  "missing_key": {
+    "status": 401,
+    "body": {
+      "error": "http_error",
+      "detail": "missing API key (set X-API-Key header)",
+      "request_id": "b6adc5f2-2880-4e2d-8467-5b9a34877d96"
+    }
+  },
+  "wrong_scope": {
+    "status": 403,
+    "body": {
+      "error": "http_error",
+      "detail": "requires 'admin' scope",
+      "request_id": "285fb5c7-83dc-4fb3-b02c-5be6481fd730"
+    },
+    "path": "GET /api/v1/incidents"
+  },
+  "bad_content_type": {
+    "status": 415,
+    "body": {
+      "error": "http_error",
+      "detail": "unsupported OTLP content-type: 'text/plain'",
+      "request_id": "1c4fccb4-3fdf-4a89-9ffa-aa310f6a13d6"
+    }
+  },
+  "json_syntax_error": {
+    "status": 415,
+    "body": {
+      "error": "http_error",
+      "detail": "Expecting property name enclosed in double quotes: line 1 column 2 (char 1)",
+      "request_id": "1c32871b-f521-410c-86e8-8164121138f0"
+    }
+  },
+  "malformed_structure": {
+    "status": 400,
+    "body": {
+      "error": "http_error",
+      "detail": "malformed OTLP payload: 'list' object has no attribute 'get'",
+      "request_id": "bd532fd1-bade-4b22-b51c-0e522236588a"
+    }
+  },
+  "malformed_protobuf": {
+    "status": 400,
+    "body": {
+      "error": "http_error",
+      "detail": "malformed OTLP payload: Error parsing message with type 'opentelemetry.proto.collector.trace.v1.ExportTraceServiceRequest'",
+      "request_id": "52da2e38-d5a7-4981-acfc-574f9ab903d4"
+    }
+  }
+}

@@ -1,0 +1,9 @@
+node_modules/
+build/
+out/
+assets/ui/
+
+# the repo root ignores data/, logs and *.log; the video's recorded data is source
+!data/
+!data/logs/
+!data/logs/*.log

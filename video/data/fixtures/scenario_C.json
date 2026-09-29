@@ -1,0 +1,232 @@
+{
+  "_provenance": "mode-a",
+  "_how": "video/tools/run_scenarios.py: disposable postgres:16-alpine + redis:7-alpine, alembic upgrade head, scenarios replayed from backend/tests/integration/test_diagnostic_swarm.py with use_llm=False",
+  "scenario": "C",
+  "test": "test_mixed_signal_lands_in_human_review",
+  "incident_row": {
+    "status": "open",
+    "root_cause": null
+  },
+  "nodes_ran": [
+    "classifier",
+    "index_diagnostic",
+    "model_diagnostic",
+    "prompt_diagnostic",
+    "retrieval_diagnostic",
+    "decision",
+    "human_review"
+  ],
+  "final": {
+    "trace_id": "swarm-mixed",
+    "signal": "eval_flag",
+    "eval_results": {
+      "faithfulness": 0.18,
+      "answer_relevance": 0.2,
+      "hallucination": 0.8,
+      "retrieval_precision": 0.18,
+      "context_recall": 0.2
+    },
+    "trace_context": {
+      "retrieval_score": 0.15,
+      "generator_model": "llama3.2:3b",
+      "prompt_name": "rag_default",
+      "index_name": "default"
+    },
+    "use_llm": false,
+    "classification": {
+      "candidates": [
+        "retrieval_failure",
+        "index_staleness",
+        "prompt_regression",
+        "model_degradation"
+      ],
+      "targets": [
+        "retrieval_diagnostic",
+        "index_diagnostic",
+        "prompt_diagnostic",
+        "model_diagnostic"
+      ],
+      "confidence": 0.85,
+      "ambiguous": true,
+      "retrieval_strength": 0.85,
+      "generation_strength": 0.82,
+      "llm_opinion": null
+    },
+    "findings": [
+      {
+        "node": "index_diagnostic",
+        "root_cause_candidate": "index_staleness",
+        "confidence": 0.34,
+        "supporting_evidence": {
+          "index_name": "default",
+          "ever_reindexed": true,
+          "index_age_seconds": 20.270071,
+          "stale": false,
+          "this_retrieval_score": 0.15,
+          "recent_retrieval_trend": null
+        }
+      },
+      {
+        "node": "model_diagnostic",
+        "root_cause_candidate": "model_degradation",
+        "confidence": 1.0,
+        "supporting_evidence": {
+          "generator_model": "llama3.2:3b",
+          "generator_tier": "ollama",
+          "tier_quality": 0.2,
+          "best_other_tier_quality": 0.9,
+          "all_tier_scores": {
+            "ollama": 0.2,
+            "groq": 0.9
+          }
+        }
+      },
+      {
+        "node": "prompt_diagnostic",
+        "root_cause_candidate": "prompt_regression",
+        "confidence": 1.0,
+        "supporting_evidence": {
+          "prompt_name": "rag_default",
+          "regressed_version": 2,
+          "previous_version": 1,
+          "changed_at": "2026-09-28T13:37:56.937194+00:00",
+          "faithfulness_before": 0.9,
+          "faithfulness_after": 0.225,
+          "drop": 0.675
+        }
+      },
+      {
+        "node": "retrieval_diagnostic",
+        "root_cause_candidate": "retrieval_failure",
+        "confidence": 0.85,
+        "supporting_evidence": {
+          "retrieval_precision": 0.18,
+          "context_recall": 0.2,
+          "retrieval_score": 0.15,
+          "weakest_signal": 0.15
+        }
+      }
+    ],
+    "trail": [
+      {
+        "node": "classifier",
+        "summary": "targets=['retrieval_diagnostic', 'index_diagnostic', 'prompt_diagnostic', 'model_diagnostic'] conf=0.85 ambiguous=True",
+        "data": {
+          "candidates": [
+            "retrieval_failure",
+            "index_staleness",
+            "prompt_regression",
+            "model_degradation"
+          ],
+          "targets": [
+            "retrieval_diagnostic",
+            "index_diagnostic",
+            "prompt_diagnostic",
+            "model_diagnostic"
+          ],
+          "confidence": 0.85,
+          "ambiguous": true,
+          "retrieval_strength": 0.85,
+          "generation_strength": 0.82,
+          "llm_opinion": null
+        }
+      },
+      {
+        "node": "index_diagnostic",
+        "summary": "index_staleness confidence=0.34 (stale=False, retrieval=0.15)",
+        "data": {
+          "index_name": "default",
+          "ever_reindexed": true,
+          "index_age_seconds": 20.270071,
+          "stale": false,
+          "this_retrieval_score": 0.15,
+          "recent_retrieval_trend": null
+        }
+      },
+      {
+        "node": "model_diagnostic",
+        "summary": "model_degradation confidence=1.00 (tier=ollama score=0.2)",
+        "data": {
+          "generator_model": "llama3.2:3b",
+          "generator_tier": "ollama",
+          "tier_quality": 0.2,
+          "best_other_tier_quality": 0.9,
+          "all_tier_scores": {
+            "ollama": 0.2,
+            "groq": 0.9
+          }
+        }
+      },
+      {
+        "node": "prompt_diagnostic",
+        "summary": "prompt_regression confidence=1.00 (drop=0.675 after v2)",
+        "data": {
+          "prompt_name": "rag_default",
+          "regressed_version": 2,
+          "previous_version": 1,
+          "changed_at": "2026-09-28T13:37:56.937194+00:00",
+          "faithfulness_before": 0.9,
+          "faithfulness_after": 0.225,
+          "drop": 0.675
+        }
+      },
+      {
+        "node": "retrieval_diagnostic",
+        "summary": "retrieval_failure confidence=0.85 (weakest=0.15)",
+        "data": {
+          "retrieval_precision": 0.18,
+          "context_recall": 0.2,
+          "retrieval_score": 0.15,
+          "weakest_signal": 0.15
+        }
+      },
+      {
+        "node": "decision",
+        "summary": "escalate (mixed_signal): best=model_degradation@1.00 vs retrieval_failure@0.85",
+        "data": {
+          "reason": "mixed_signal",
+          "best": {
+            "node": "model_diagnostic",
+            "root_cause_candidate": "model_degradation",
+            "confidence": 1.0,
+            "supporting_evidence": {
+              "generator_model": "llama3.2:3b",
+              "generator_tier": "ollama",
+              "tier_quality": 0.2,
+              "best_other_tier_quality": 0.9,
+              "all_tier_scores": {
+                "ollama": 0.2,
+                "groq": 0.9
+              }
+            }
+          },
+          "runner_up": {
+            "node": "retrieval_diagnostic",
+            "root_cause_candidate": "retrieval_failure",
+            "confidence": 0.85,
+            "supporting_evidence": {
+              "retrieval_precision": 0.18,
+              "context_recall": 0.2,
+              "retrieval_score": 0.15,
+              "weakest_signal": 0.15
+            }
+          }
+        }
+      },
+      {
+        "node": "human_review",
+        "summary": "action=human_review_required status=open",
+        "data": {
+          "tool_result": null,
+          "error": null
+        }
+      }
+    ],
+    "chosen_root_cause": null,
+    "chosen_confidence": 1.0,
+    "needs_human_review": true,
+    "remediation_action": "human_review_required",
+    "remediation_status": "open",
+    "incident_id": "062b3e8a-4e87-431f-9f01-f1d95152e709"
+  }
+}

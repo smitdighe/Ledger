@@ -1,0 +1,10 @@
+2026-09-29 19:07:57 [info     ] eval.drift_checked             baseline=0.85 drifted=True golden_set_version=None higher_is_worse=False metric=faithfulness n=20 threshold=0.15 window_mean=0.575
+2026-09-29 19:07:57 [info     ] graph.run                      eval_results={'faithfulness': 0.25, 'answer_relevance': 0.3, 'hallucination': 0.6, 'retrieval_precision': 0.9, 'context_recall': 0.9} signal=eval_flag trace_id=swarm-prompt
+2026-09-29 19:07:57 [info     ] node.classifier                ambiguous=False candidates=['prompt_regression', 'model_degradation'] confidence=0.75 generation_strength=0.75 llm_opinion=None retrieval_strength=0.1 targets=['prompt_diagnostic', 'model_diagnostic'] trace_id=swarm-prompt
+2026-09-29 19:07:57 [info     ] node.model_diagnostic          all_tier_scores={'groq': 0.9} best_other_tier_quality=None confidence=0.0 generator_model=groq/llama-3.1-8b generator_tier=groq tier_quality=0.9 trace_id=swarm-prompt
+2026-09-29 19:07:57 [info     ] node.prompt_diagnostic         changed_at=2026-09-28T13:37:56.937194+00:00 confidence=1.0 drop=0.65 faithfulness_after=0.25 faithfulness_before=0.9 previous_version=1 prompt_name=rag_default regressed_version=2 trace_id=swarm-prompt
+2026-09-29 19:07:57 [info     ] node.decision                  chosen=prompt_regression confidence=1.0 trace_id=swarm-prompt
+2026-09-29 19:07:57 [info     ] tool.rollback                  active_version=1 already=True prompt=rag_default
+2026-09-29 19:07:57 [info     ] incident.written               action=rollback:already_applied incident_id=5a7fa2a0-1d26-4a8e-a558-dd6341f1ac7a root=prompt_regression status=resolved trace_id=swarm-prompt
+2026-09-29 19:07:57 [info     ] tool.rollback                  active_version=1 already=True prompt=rag_default
+2026-09-29 19:07:57 [info     ] tool.rollback                  active_version=1 already=True prompt=rag_default

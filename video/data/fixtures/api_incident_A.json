@@ -1,0 +1,145 @@
+{
+  "_provenance": "mode-a",
+  "_how": "video/tools/run_scenarios.py: disposable postgres:16-alpine + redis:7-alpine, alembic upgrade head, scenarios replayed from backend/tests/integration/test_diagnostic_swarm.py with use_llm=False",
+  "path": "/api/v1/incidents/295b36a3-d24d-499c-a15c-b6762c9f93b2",
+  "params": null,
+  "status": 200,
+  "body": {
+    "id": "295b36a3-d24d-499c-a15c-b6762c9f93b2",
+    "trace_id": "swarm-retrieval",
+    "root_cause": "retrieval_failure",
+    "status": "resolved",
+    "classification_confidence": 0.88,
+    "remediation_action": "reindex:triggered_stub",
+    "created_at": "2026-09-29T13:37:41.617872+00:00",
+    "resolved_at": "2026-09-29T13:37:41.453847+00:00",
+    "diagnostic_trail": {
+      "trail": [
+        {
+          "data": {
+            "targets": [
+              "retrieval_diagnostic",
+              "index_diagnostic"
+            ],
+            "ambiguous": false,
+            "candidates": [
+              "retrieval_failure",
+              "index_staleness"
+            ],
+            "confidence": 0.88,
+            "llm_opinion": null,
+            "retrieval_strength": 0.88,
+            "generation_strength": 0.1
+          },
+          "node": "classifier",
+          "summary": "targets=['retrieval_diagnostic', 'index_diagnostic'] conf=0.88 ambiguous=False"
+        },
+        {
+          "data": {
+            "stale": false,
+            "index_name": "default",
+            "ever_reindexed": false,
+            "index_age_seconds": null,
+            "this_retrieval_score": 0.12,
+            "recent_retrieval_trend": null
+          },
+          "node": "index_diagnostic",
+          "summary": "index_staleness confidence=0.35 (stale=False, retrieval=0.12)"
+        },
+        {
+          "data": {
+            "context_recall": 0.2,
+            "weakest_signal": 0.12,
+            "retrieval_score": 0.12,
+            "retrieval_precision": 0.15
+          },
+          "node": "retrieval_diagnostic",
+          "summary": "retrieval_failure confidence=0.88 (weakest=0.12)"
+        },
+        {
+          "data": {
+            "chosen": {
+              "node": "retrieval_diagnostic",
+              "confidence": 0.88,
+              "supporting_evidence": {
+                "context_recall": 0.2,
+                "weakest_signal": 0.12,
+                "retrieval_score": 0.12,
+                "retrieval_precision": 0.15
+              },
+              "root_cause_candidate": "retrieval_failure"
+            },
+            "reason": "selected"
+          },
+          "node": "decision",
+          "summary": "chose retrieval_failure @ 0.88"
+        },
+        {
+          "data": {
+            "error": null,
+            "tool_result": {
+              "stub": true,
+              "tool": "reindex",
+              "index": "default",
+              "status": "triggered_stub",
+              "last_reindex": "2026-09-29T13:37:41.449914+00:00"
+            }
+          },
+          "node": "remediation",
+          "summary": "action=reindex:triggered_stub status=resolved"
+        }
+      ],
+      "findings": [
+        {
+          "node": "index_diagnostic",
+          "confidence": 0.352,
+          "supporting_evidence": {
+            "stale": false,
+            "index_name": "default",
+            "ever_reindexed": false,
+            "index_age_seconds": null,
+            "this_retrieval_score": 0.12,
+            "recent_retrieval_trend": null
+          },
+          "root_cause_candidate": "index_staleness"
+        },
+        {
+          "node": "retrieval_diagnostic",
+          "confidence": 0.88,
+          "supporting_evidence": {
+            "context_recall": 0.2,
+            "weakest_signal": 0.12,
+            "retrieval_score": 0.12,
+            "retrieval_precision": 0.15
+          },
+          "root_cause_candidate": "retrieval_failure"
+        }
+      ],
+      "tool_result": {
+        "stub": true,
+        "tool": "reindex",
+        "index": "default",
+        "status": "triggered_stub",
+        "last_reindex": "2026-09-29T13:37:41.449914+00:00"
+      },
+      "classification": {
+        "targets": [
+          "retrieval_diagnostic",
+          "index_diagnostic"
+        ],
+        "ambiguous": false,
+        "candidates": [
+          "retrieval_failure",
+          "index_staleness"
+        ],
+        "confidence": 0.88,
+        "llm_opinion": null,
+        "retrieval_strength": 0.88,
+        "generation_strength": 0.1
+      },
+      "chosen_confidence": 0.88,
+      "chosen_root_cause": "retrieval_failure",
+      "needs_human_review": false
+    }
+  }
+}

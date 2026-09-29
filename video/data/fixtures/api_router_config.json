@@ -1,0 +1,63 @@
+{
+  "_provenance": "mode-a",
+  "_how": "video/tools/run_scenarios.py: disposable postgres:16-alpine + redis:7-alpine, alembic upgrade head, scenarios replayed from backend/tests/integration/test_diagnostic_swarm.py with use_llm=False",
+  "path": "/api/v1/router/config",
+  "params": null,
+  "status": 200,
+  "body": {
+    "tiers": [
+      {
+        "tier": "cerebras",
+        "role": "low-latency root-cause triage / sub-second classification",
+        "priority": 1,
+        "enabled": true,
+        "available": false,
+        "cached_health": null,
+        "last_health_check": null,
+        "last_latency_ms": null,
+        "rpm": 30,
+        "rpd": 14400,
+        "default_model": "llama3.1-8b"
+      },
+      {
+        "tier": "groq",
+        "role": "fast high-throughput general inference",
+        "priority": 2,
+        "enabled": true,
+        "available": false,
+        "cached_health": null,
+        "last_health_check": null,
+        "last_latency_ms": null,
+        "rpm": 30,
+        "rpd": 14400,
+        "default_model": "llama-3.1-8b-instant"
+      },
+      {
+        "tier": "gemini",
+        "role": "cross-validation / secondary judge",
+        "priority": 3,
+        "enabled": true,
+        "available": false,
+        "cached_health": null,
+        "last_health_check": null,
+        "last_latency_ms": null,
+        "rpm": 15,
+        "rpd": 1500,
+        "default_model": "gemini-2.0-flash"
+      },
+      {
+        "tier": "ollama",
+        "role": "zero-cost, zero-rate-limit local fallback (guaranteed floor)",
+        "priority": 4,
+        "enabled": true,
+        "available": true,
+        "cached_health": null,
+        "last_health_check": null,
+        "last_latency_ms": null,
+        "rpm": 100000,
+        "rpd": null,
+        "default_model": "llama3.2:3b"
+      }
+    ]
+  }
+}

@@ -1,0 +1,1423 @@
+{
+  "generated_by": "video/tools/extract_facts.py",
+  "repo_head": "3a32350",
+  "count": 230,
+  "facts": [
+    {
+      "id": "brand.logo",
+      "value": [
+        "██╗      ███████╗ ██████╗   ██████╗  ███████╗ ██████╗",
+        "██║      ██╔════╝ ██╔══██╗ ██╔════╝  ██╔════╝ ██╔══██╗",
+        "██║      █████╗   ██║  ██║ ██║  ███╗ █████╗   ██████╔╝",
+        "██║      ██╔══╝   ██║  ██║ ██║   ██║ ██╔══╝   ██╔══██╗",
+        "███████╗ ███████╗ ██████╔╝ ╚██████╔╝ ███████╗ ██║  ██║",
+        "╚══════╝ ╚══════╝ ╚═════╝   ╚═════╝  ╚══════╝ ╚═╝  ╚═╝"
+      ],
+      "source": "README.md:4-9",
+      "match": [
+        "██╗      ███████╗ ██████╗   ██████╗  ███████╗ ██████╗",
+        "██║      ██╔════╝ ██╔══██╗ ██╔════╝  ██╔════╝ ██╔══██╗",
+        "██║      █████╗   ██║  ██║ ██║  ███╗ █████╗   ██████╔╝",
+        "██║      ██╔══╝   ██║  ██║ ██║   ██║ ██╔══╝   ██╔══██╗",
+        "███████╗ ███████╗ ██████╔╝ ╚██████╔╝ ███████╗ ██║  ██║",
+        "╚══════╝ ╚══════╝ ╚═════╝   ╚═════╝  ╚══════╝ ╚═╝  ╚═╝"
+      ],
+      "note": "ASCII brand asset, drawn cell by cell"
+    },
+    {
+      "id": "brand.tagline",
+      "value": "Who watches the watchmen. Observability and auto-remediation for RAG and agent systems in production.",
+      "source": "README.md:12",
+      "match": "Who watches the watchmen. Observability and auto-remediation for RAG and agent systems in production."
+    },
+    {
+      "id": "brand.tagline_short",
+      "value": "Who watches the watchmen.",
+      "source": "README.md:12",
+      "match": "Who watches the watchmen."
+    },
+    {
+      "id": "brand.mark",
+      "value": "◆",
+      "source": "frontend/src/components/layout/Sidebar.tsx:24",
+      "match": "◆"
+    },
+    {
+      "id": "brand.name",
+      "value": "Ledger",
+      "source": "frontend/src/components/layout/Sidebar.tsx:28",
+      "match": "Ledger"
+    },
+    {
+      "id": "brand.mark_color",
+      "value": "#22c55e",
+      "source": "frontend/tailwind.config.ts:12",
+      "match": "#22c55e"
+    },
+    {
+      "id": "brand.repo",
+      "value": "github.com/smitdighe/Ledger",
+      "source": ".git/config [remote \"origin\"] url",
+      "method": "git config --get remote.origin.url, scheme and .git stripped"
+    },
+    {
+      "id": "voice.slower",
+      "value": "Most observability tools tell you your LLM app got slower.",
+      "source": "linkedin_post.txt:1",
+      "match": "Most observability tools tell you your LLM app got slower."
+    },
+    {
+      "id": "voice.dumber",
+      "value": "Almost none tell you why it got dumber.",
+      "source": "linkedin_post.txt:1",
+      "match": "Almost none tell you why it got dumber."
+    },
+    {
+      "id": "voice.every_trace",
+      "value": "Score every trace, not a sample",
+      "source": "linkedin_post.txt:7",
+      "match": "Score every trace, not a sample"
+    },
+    {
+      "id": "voice.refuses",
+      "value": "it refuses to guess",
+      "source": "linkedin_post.txt:13",
+      "match": "it refuses to guess"
+    },
+    {
+      "id": "voice.metric",
+      "value": "an eval score that only renders a dashboard is a metric.",
+      "source": "linkedin_post.txt:24",
+      "match": "an eval score that only renders a dashboard is a metric."
+    },
+    {
+      "id": "voice.system",
+      "value": "One that produces a diagnosis and a tool call is a system.",
+      "source": "linkedin_post.txt:24",
+      "match": "One that produces a diagnosis and a tool call is a system."
+    },
+    {
+      "id": "voice.functional",
+      "value": "the UI is functional, not beautiful",
+      "source": "linkedin_post.txt:22",
+      "match": "the UI is functional, not beautiful"
+    },
+    {
+      "id": "voice.otlp",
+      "value": "OTel traces land over OTLP.",
+      "source": "linkedin_post.txt:5",
+      "match": "OTel traces land over OTLP"
+    },
+    {
+      "id": "api.prefix",
+      "value": "/api/v1",
+      "source": "backend/app/main.py:61",
+      "match": "/api/v1"
+    },
+    {
+      "id": "api.traces.path",
+      "value": "/traces",
+      "source": "backend/app/api/v1/endpoints/traces.py:68",
+      "match": "@router.post(\"/traces\""
+    },
+    {
+      "id": "api.traces.method",
+      "value": "POST",
+      "source": "backend/app/api/v1/endpoints/traces.py:68",
+      "match": "post"
+    },
+    {
+      "id": "api.header",
+      "value": "X-API-Key",
+      "source": "backend/app/core/security.py:28",
+      "match": "X-API-Key"
+    },
+    {
+      "id": "api.scope.ingestion",
+      "value": "ingestion",
+      "source": "backend/app/core/security.py:15",
+      "match": "ingestion"
+    },
+    {
+      "id": "api.scope.admin",
+      "value": "admin",
+      "source": "backend/app/core/security.py:14",
+      "match": "admin"
+    },
+    {
+      "id": "api.status.missing_key",
+      "value": 401,
+      "source": "backend/app/core/security.py:31",
+      "match": "401"
+    },
+    {
+      "id": "api.status.wrong_scope",
+      "value": 403,
+      "source": "backend/app/core/security.py:46",
+      "match": "403"
+    },
+    {
+      "id": "api.status.bad_content_type",
+      "value": 415,
+      "source": "backend/app/api/v1/endpoints/traces.py:83",
+      "match": "415"
+    },
+    {
+      "id": "api.status.malformed",
+      "value": 400,
+      "source": "backend/app/api/v1/endpoints/traces.py:85",
+      "match": "400"
+    },
+    {
+      "id": "api.status.never",
+      "value": 500,
+      "source": "backend/app/api/v1/endpoints/traces.py:84",
+      "match": "never 500"
+    },
+    {
+      "id": "api.status.broker_down",
+      "value": 503,
+      "source": "backend/app/api/v1/endpoints/traces.py:94",
+      "match": "503"
+    },
+    {
+      "id": "api.broker_ping_s",
+      "value": 1,
+      "source": "backend/app/api/v1/endpoints/traces.py:34",
+      "match": "socket_connect_timeout=1"
+    },
+    {
+      "id": "api.accepted.task_id",
+      "value": "task_id",
+      "source": "backend/app/api/v1/endpoints/traces.py:41",
+      "match": "task_id"
+    },
+    {
+      "id": "api.accepted.accepted_spans",
+      "value": "accepted_spans",
+      "source": "backend/app/api/v1/endpoints/traces.py:42",
+      "match": "accepted_spans"
+    },
+    {
+      "id": "api.accepted.traces",
+      "value": "traces",
+      "source": "backend/app/api/v1/endpoints/traces.py:43",
+      "match": "traces"
+    },
+    {
+      "id": "api.accepted.trace_ids",
+      "value": "trace_ids",
+      "source": "backend/app/api/v1/endpoints/traces.py:44",
+      "match": "trace_ids"
+    },
+    {
+      "id": "otlp.protobuf",
+      "value": "protobuf",
+      "source": "backend/app/ingestion/otel_receiver.py:29",
+      "match": "protobuf"
+    },
+    {
+      "id": "otlp.json",
+      "value": "json",
+      "source": "backend/app/ingestion/otel_receiver.py:31",
+      "match": "json"
+    },
+    {
+      "id": "otlp.name",
+      "value": "OTLP",
+      "source": "backend/app/api/v1/endpoints/traces.py:68",
+      "match": "OTLP"
+    },
+    {
+      "id": "celery.queue.ingestion",
+      "value": "ingestion",
+      "source": "backend/app/core/celery_app.py:45",
+      "match": "ingestion"
+    },
+    {
+      "id": "celery.queue.eval",
+      "value": "eval",
+      "source": "backend/app/core/celery_app.py:46",
+      "match": "eval"
+    },
+    {
+      "id": "celery.queue.diagnostic",
+      "value": "diagnostic",
+      "source": "backend/app/tasks/diagnostic_tasks.py:19",
+      "match": "diagnostic"
+    },
+    {
+      "id": "task.ingest",
+      "value": "ingest_traces",
+      "source": "backend/app/tasks/ingestion_tasks.py:52",
+      "match": "ingest_traces"
+    },
+    {
+      "id": "task.eval",
+      "value": "eval_trace",
+      "source": "backend/app/tasks/eval_tasks.py:81",
+      "match": "eval_trace"
+    },
+    {
+      "id": "task.eval_chain",
+      "value": "eval_trace.delay",
+      "source": "backend/app/tasks/ingestion_tasks.py:44",
+      "match": "eval_trace.delay"
+    },
+    {
+      "id": "task.diag",
+      "value": "run_diagnostic",
+      "source": "backend/app/tasks/diagnostic_tasks.py:24",
+      "match": "run_diagnostic"
+    },
+    {
+      "id": "task.diag_delay",
+      "value": "run_diagnostic.delay",
+      "source": "backend/app/tasks/eval_tasks.py:59",
+      "match": "run_diagnostic.delay"
+    },
+    {
+      "id": "task.diag.max_retries",
+      "value": 2,
+      "source": "backend/app/tasks/diagnostic_tasks.py:21",
+      "match": "max_retries=2"
+    },
+    {
+      "id": "task.langfuse_nonfatal",
+      "value": "non-fatal",
+      "source": "backend/app/tasks/ingestion_tasks.py:37",
+      "match": "non-fatal"
+    },
+    {
+      "id": "ch.table",
+      "value": "ledger.traces",
+      "source": "backend/app/db/clickhouse/schema.sql:8",
+      "match": "ledger.traces"
+    },
+    {
+      "id": "ch.engine",
+      "value": "MergeTree",
+      "source": "backend/app/db/clickhouse/schema.sql:21",
+      "match": "MergeTree"
+    },
+    {
+      "id": "ch.partition",
+      "value": "event_date",
+      "source": "backend/app/db/clickhouse/schema.sql:22",
+      "match": "event_date"
+    },
+    {
+      "id": "ch.partition_day",
+      "value": "toDate(start_time)",
+      "source": "backend/app/db/clickhouse/schema.sql:19",
+      "match": "toDate(start_time)"
+    },
+    {
+      "id": "ch.ttl_days",
+      "value": 90,
+      "source": "backend/app/db/clickhouse/schema.sql:24",
+      "match": "90"
+    },
+    {
+      "id": "ch.name",
+      "value": "ClickHouse",
+      "source": "backend/app/db/clickhouse/client.py:1",
+      "match": "ClickHouse"
+    },
+    {
+      "id": "langfuse.name",
+      "value": "Langfuse",
+      "source": "backend/app/tasks/ingestion_tasks.py:4",
+      "match": "Langfuse"
+    },
+    {
+      "id": "eval.ragas.faithfulness",
+      "value": "faithfulness",
+      "source": "backend/app/eval/ragas_runner.py:67",
+      "match": "faithfulness"
+    },
+    {
+      "id": "eval.ragas.context_precision",
+      "value": "context_precision",
+      "source": "backend/app/eval/ragas_runner.py:68",
+      "match": "context_precision"
+    },
+    {
+      "id": "eval.ragas.context_recall",
+      "value": "context_recall",
+      "source": "backend/app/eval/ragas_runner.py:69",
+      "match": "context_recall"
+    },
+    {
+      "id": "eval.deepeval.answer_relevance",
+      "value": "answer_relevance",
+      "source": "backend/app/eval/deepeval_runner.py:66",
+      "match": "answer_relevance"
+    },
+    {
+      "id": "eval.deepeval.hallucination",
+      "value": "hallucination",
+      "source": "backend/app/eval/deepeval_runner.py:67",
+      "match": "hallucination"
+    },
+    {
+      "id": "eval.ragas.name",
+      "value": "RAGAS",
+      "source": "backend/app/eval/ragas_runner.py:1",
+      "match": "RAGAS"
+    },
+    {
+      "id": "eval.deepeval.name",
+      "value": "DeepEval",
+      "source": "backend/app/eval/deepeval_runner.py:1",
+      "match": "DeepEval"
+    },
+    {
+      "id": "eval.precision_type",
+      "value": "retrieval_precision",
+      "source": "backend/app/eval/runner.py:36",
+      "match": "retrieval_precision"
+    },
+    {
+      "id": "judge.class",
+      "value": "JudgeRouter",
+      "source": "backend/app/eval/judge_router.py:34",
+      "match": "JudgeRouter"
+    },
+    {
+      "id": "judge.tiers",
+      "value": [
+        "cerebras",
+        "groq",
+        "ollama"
+      ],
+      "source": "backend/app/eval/judge_router.py:26",
+      "match": "{\"cerebras\", \"groq\", \"ollama\"}"
+    },
+    {
+      "id": "judge.cross_validation",
+      "value": "gemini",
+      "source": "backend/app/eval/judge_router.py:27",
+      "match": "gemini"
+    },
+    {
+      "id": "judge.denylist",
+      "value": "PAID_PROVIDERS",
+      "source": "backend/app/eval/judge_router.py:22",
+      "match": "PAID_PROVIDERS"
+    },
+    {
+      "id": "judge.error",
+      "value": "PaidJudgeError",
+      "source": "backend/app/eval/judge_router.py:30",
+      "match": "PaidJudgeError"
+    },
+    {
+      "id": "judge.reassert",
+      "value": "if resp.provider in PAID_PROVIDERS:",
+      "source": "backend/app/eval/judge_router.py:65",
+      "match": "if resp.provider in PAID_PROVIDERS:",
+      "note": "re-asserted after every judge call returns"
+    },
+    {
+      "id": "judge.nonpaid",
+      "value": "non-paid",
+      "source": "backend/app/eval/judge_router.py:24",
+      "match": "non-paid"
+    },
+    {
+      "id": "flag.fn",
+      "value": "_flag_reasons",
+      "source": "backend/app/tasks/eval_tasks.py:30",
+      "match": "_flag_reasons"
+    },
+    {
+      "id": "flag.key",
+      "value": "flagged",
+      "source": "backend/app/tasks/eval_tasks.py:67",
+      "match": "flagged"
+    },
+    {
+      "id": "flag.low",
+      "value": 0.5,
+      "source": "backend/app/tasks/eval_tasks.py:26",
+      "match": "0.5"
+    },
+    {
+      "id": "flag.hallucination",
+      "value": 0.5,
+      "source": "backend/app/tasks/eval_tasks.py:27",
+      "match": "0.5"
+    },
+    {
+      "id": "flag.reason.low_faithfulness",
+      "value": "low_faithfulness",
+      "source": "backend/app/tasks/eval_tasks.py:33",
+      "match": "low_faithfulness"
+    },
+    {
+      "id": "flag.reason.low_answer_relevance",
+      "value": "low_answer_relevance",
+      "source": "backend/app/tasks/eval_tasks.py:35",
+      "match": "low_answer_relevance"
+    },
+    {
+      "id": "flag.reason.low_context_precision",
+      "value": "low_context_precision",
+      "source": "backend/app/tasks/eval_tasks.py:37",
+      "match": "low_context_precision"
+    },
+    {
+      "id": "flag.reason.low_context_recall",
+      "value": "low_context_recall",
+      "source": "backend/app/tasks/eval_tasks.py:39",
+      "match": "low_context_recall"
+    },
+    {
+      "id": "flag.reason.high_hallucination",
+      "value": "high_hallucination",
+      "source": "backend/app/tasks/eval_tasks.py:41",
+      "match": "high_hallucination"
+    },
+    {
+      "id": "flag.reason.faithfulness_drift",
+      "value": "faithfulness_drift",
+      "source": "backend/app/tasks/eval_tasks.py:53",
+      "match": "faithfulness_drift"
+    },
+    {
+      "id": "eval.drift_call",
+      "value": "detect_drift(session, EvalType.faithfulness, persist=False)",
+      "source": "backend/app/tasks/eval_tasks.py:49",
+      "match": "detect_drift(session, EvalType.faithfulness, persist=False)"
+    },
+    {
+      "id": "drift.module",
+      "value": "app/eval/drift.py",
+      "source": "backend/app/eval/drift.py:1",
+      "match": "Drift detection",
+      "note": "module path shown as a breadcrumb"
+    },
+    {
+      "id": "drift.fn",
+      "value": "detect_drift",
+      "source": "backend/app/eval/drift.py:45",
+      "match": "detect_drift"
+    },
+    {
+      "id": "drift.window",
+      "value": 20,
+      "source": "backend/app/eval/drift.py:30",
+      "match": "20"
+    },
+    {
+      "id": "drift.threshold",
+      "value": 0.15,
+      "source": "backend/app/eval/drift.py:29",
+      "match": "0.15"
+    },
+    {
+      "id": "drift.baseline.faithfulness",
+      "value": 0.85,
+      "source": "backend/app/eval/drift.py:23",
+      "match": "0.85"
+    },
+    {
+      "id": "drift.baseline.retrieval_precision",
+      "value": 0.8,
+      "source": "backend/app/eval/drift.py:24",
+      "match": "0.80"
+    },
+    {
+      "id": "drift.baseline.context_recall",
+      "value": 0.8,
+      "source": "backend/app/eval/drift.py:25",
+      "match": "0.80"
+    },
+    {
+      "id": "drift.baseline.answer_relevance",
+      "value": 0.85,
+      "source": "backend/app/eval/drift.py:26",
+      "match": "0.85"
+    },
+    {
+      "id": "drift.baseline.hallucination",
+      "value": 0.2,
+      "source": "backend/app/eval/drift.py:27",
+      "match": "0.20"
+    },
+    {
+      "id": "drift.inverted",
+      "value": "hallucination",
+      "source": "backend/app/eval/drift.py:27",
+      "match": "hallucination"
+    },
+    {
+      "id": "drift.floor.faithfulness",
+      "value": 0.7,
+      "source": "backend/app/eval/drift.py:75",
+      "method": "baseline(faithfulness) - DEFAULT_THRESHOLD: drifted when (base - window_mean) > threshold"
+    },
+    {
+      "id": "drift.beat_metrics",
+      "value": [
+        "faithfulness",
+        "answer_relevance"
+      ],
+      "source": "backend/app/tasks/scheduled.py:20",
+      "match": "EvalType.faithfulness, EvalType.answer_relevance"
+    },
+    {
+      "id": "swarm.node_count",
+      "value": 8,
+      "source": "backend/app/agents/graph.py:64-72",
+      "method": "diagnostic_graph.get_graph().nodes minus __start__/__end__"
+    },
+    {
+      "id": "swarm.node.classifier",
+      "value": "classifier",
+      "source": "backend/app/agents/graph.py:65",
+      "match": "classifier"
+    },
+    {
+      "id": "swarm.node.retrieval_diagnostic",
+      "value": "retrieval_diagnostic",
+      "source": "backend/app/agents/state.py:19",
+      "match": "retrieval_diagnostic"
+    },
+    {
+      "id": "swarm.node.index_diagnostic",
+      "value": "index_diagnostic",
+      "source": "backend/app/agents/state.py:22",
+      "match": "index_diagnostic"
+    },
+    {
+      "id": "swarm.node.prompt_diagnostic",
+      "value": "prompt_diagnostic",
+      "source": "backend/app/agents/state.py:20",
+      "match": "prompt_diagnostic"
+    },
+    {
+      "id": "swarm.node.model_diagnostic",
+      "value": "model_diagnostic",
+      "source": "backend/app/agents/state.py:21",
+      "match": "model_diagnostic"
+    },
+    {
+      "id": "swarm.node.decision",
+      "value": "decision",
+      "source": "backend/app/agents/graph.py:70",
+      "match": "decision"
+    },
+    {
+      "id": "swarm.node.remediation",
+      "value": "remediation",
+      "source": "backend/app/agents/graph.py:71",
+      "match": "remediation"
+    },
+    {
+      "id": "swarm.node.human_review",
+      "value": "human_review",
+      "source": "backend/app/agents/graph.py:72",
+      "match": "human_review"
+    },
+    {
+      "id": "swarm.graph_lib",
+      "value": "LangGraph",
+      "source": "backend/app/agents/state.py:1",
+      "match": "LangGraph"
+    },
+    {
+      "id": "swarm.reducer",
+      "value": "operator.add",
+      "source": "backend/app/agents/state.py:64",
+      "match": "operator.add"
+    },
+    {
+      "id": "swarm.classifier.deterministic",
+      "value": "DETERMINISTIC",
+      "source": "backend/app/agents/nodes/classifier.py:3",
+      "match": "DETERMINISTIC"
+    },
+    {
+      "id": "swarm.classifier.advisory",
+      "value": "does not override the heuristic",
+      "source": "backend/app/agents/nodes/classifier.py:6",
+      "match": "does not override the heuristic"
+    },
+    {
+      "id": "swarm.signal_threshold",
+      "value": 0.5,
+      "source": "backend/app/agents/state.py:25",
+      "match": "0.5"
+    },
+    {
+      "id": "swarm.decision_threshold",
+      "value": 0.55,
+      "source": "backend/app/agents/state.py:26",
+      "match": "0.55"
+    },
+    {
+      "id": "swarm.ambiguity_margin",
+      "value": 0.1,
+      "source": "backend/app/agents/state.py:27",
+      "match": "0.10"
+    },
+    {
+      "id": "swarm.ambiguity_margin_cross",
+      "value": 0.25,
+      "source": "backend/app/agents/state.py:28",
+      "match": "0.25"
+    },
+    {
+      "id": "rootcause.retrieval_failure",
+      "value": "retrieval_failure",
+      "source": "backend/app/agents/state.py:13",
+      "match": "retrieval_failure"
+    },
+    {
+      "id": "bucket.retrieval_failure",
+      "value": "retrieval",
+      "source": "backend/app/agents/state.py:32",
+      "match": "retrieval"
+    },
+    {
+      "id": "rootcause.index_staleness",
+      "value": "index_staleness",
+      "source": "backend/app/agents/state.py:16",
+      "match": "index_staleness"
+    },
+    {
+      "id": "bucket.index_staleness",
+      "value": "retrieval",
+      "source": "backend/app/agents/state.py:33",
+      "match": "retrieval"
+    },
+    {
+      "id": "rootcause.prompt_regression",
+      "value": "prompt_regression",
+      "source": "backend/app/agents/state.py:14",
+      "match": "prompt_regression"
+    },
+    {
+      "id": "bucket.prompt_regression",
+      "value": "generation",
+      "source": "backend/app/agents/state.py:34",
+      "match": "generation"
+    },
+    {
+      "id": "rootcause.model_degradation",
+      "value": "model_degradation",
+      "source": "backend/app/agents/state.py:15",
+      "match": "model_degradation"
+    },
+    {
+      "id": "bucket.model_degradation",
+      "value": "generation",
+      "source": "backend/app/agents/state.py:35",
+      "match": "generation"
+    },
+    {
+      "id": "decision.reason.low_confidence",
+      "value": "low_confidence",
+      "source": "backend/app/agents/nodes/decision.py:54",
+      "match": "low_confidence"
+    },
+    {
+      "id": "decision.reason.mixed_signal",
+      "value": "mixed_signal",
+      "source": "backend/app/agents/nodes/decision.py:61",
+      "match": "mixed_signal"
+    },
+    {
+      "id": "decision.reason.ambiguous_tie",
+      "value": "ambiguous_tie",
+      "source": "backend/app/agents/nodes/decision.py:67",
+      "match": "ambiguous_tie"
+    },
+    {
+      "id": "decision.reason.no_candidate",
+      "value": "no_candidate",
+      "source": "backend/app/agents/nodes/decision.py:41",
+      "match": "no_candidate"
+    },
+    {
+      "id": "decision.rule.low_confidence",
+      "value": "< DECISION_CONFIDENCE_THRESHOLD",
+      "source": "backend/app/agents/nodes/decision.py:53",
+      "match": "< DECISION_CONFIDENCE_THRESHOLD"
+    },
+    {
+      "id": "decision.rule.mixed_signal",
+      "value": "< AMBIGUITY_MARGIN_CROSS",
+      "source": "backend/app/agents/nodes/decision.py:58",
+      "match": "< AMBIGUITY_MARGIN_CROSS"
+    },
+    {
+      "id": "decision.rule.ambiguous_tie",
+      "value": "< AMBIGUITY_MARGIN",
+      "source": "backend/app/agents/nodes/decision.py:65",
+      "match": "< AMBIGUITY_MARGIN"
+    },
+    {
+      "id": "decision.rule.no_candidate",
+      "value": "if not findings:",
+      "source": "backend/app/agents/nodes/decision.py:34",
+      "match": "if not findings:"
+    },
+    {
+      "id": "decision.escalate_fmt",
+      "value": "escalate ({reason}): best=",
+      "source": "backend/app/agents/nodes/decision.py:71",
+      "match": "escalate ({reason}): best="
+    },
+    {
+      "id": "decision.top2",
+      "value": "top-2",
+      "source": "backend/app/agents/state.py:27",
+      "match": "top-2"
+    },
+    {
+      "id": "decision.no_candidate_summary",
+      "value": "no candidate root cause",
+      "source": "backend/app/agents/nodes/decision.py:35",
+      "match": "no candidate root cause"
+    },
+    {
+      "id": "remedy.retrieval_failure",
+      "value": "reindex",
+      "source": "backend/app/agents/nodes/remediation.py:5",
+      "match": "reindex (stub)"
+    },
+    {
+      "id": "remedy.index_staleness",
+      "value": "reindex",
+      "source": "backend/app/agents/nodes/remediation.py:6",
+      "match": "reindex (stub)"
+    },
+    {
+      "id": "remedy.prompt_regression",
+      "value": "rollback",
+      "source": "backend/app/agents/nodes/remediation.py:7",
+      "match": "rollback"
+    },
+    {
+      "id": "remedy.model_degradation",
+      "value": "reroute",
+      "source": "backend/app/agents/nodes/remediation.py:8",
+      "match": "reroute"
+    },
+    {
+      "id": "tool.reindex.status",
+      "value": "triggered_stub",
+      "source": "backend/app/agents/tools/reindex_tool.py:39",
+      "match": "triggered_stub"
+    },
+    {
+      "id": "tool.reindex.is_stub",
+      "value": "STUB",
+      "source": "backend/app/agents/tools/reindex_tool.py:1",
+      "match": "STUB"
+    },
+    {
+      "id": "tool.rollback.status",
+      "value": "applied",
+      "source": "backend/app/agents/tools/rollback_tool.py:55",
+      "match": "\"applied\""
+    },
+    {
+      "id": "tool.reroute.priority",
+      "value": 999,
+      "source": "backend/app/agents/tools/reroute_tool.py:16",
+      "match": "999"
+    },
+    {
+      "id": "tool.reroute.disables",
+      "value": "row.is_enabled = False",
+      "source": "backend/app/agents/tools/reroute_tool.py:32",
+      "match": "row.is_enabled = False"
+    },
+    {
+      "id": "human.action",
+      "value": "human_review_required",
+      "source": "backend/app/agents/nodes/human_review.py:19",
+      "match": "human_review_required"
+    },
+    {
+      "id": "human.status",
+      "value": "open",
+      "source": "backend/app/agents/nodes/human_review.py:20",
+      "match": "open"
+    },
+    {
+      "id": "human.flag",
+      "value": "needs_human_review",
+      "source": "backend/app/agents/nodes/_incident.py:39",
+      "match": "needs_human_review"
+    },
+    {
+      "id": "incident.status.resolved",
+      "value": "resolved",
+      "source": "backend/app/db/postgres/models.py:49",
+      "match": "resolved"
+    },
+    {
+      "id": "incident.trail_jsonb",
+      "value": "JSONB",
+      "source": "backend/app/db/postgres/models.py:80",
+      "match": "JSONB"
+    },
+    {
+      "id": "api.incident.get",
+      "value": "/incidents/{incident_id}",
+      "source": "backend/app/api/v1/endpoints/incidents.py:98",
+      "match": "/incidents/{incident_id}"
+    },
+    {
+      "id": "api.incident.patch",
+      "value": "/incidents/{incident_id}",
+      "source": "backend/app/api/v1/endpoints/incidents.py:119",
+      "match": "/incidents/{incident_id}"
+    },
+    {
+      "id": "api.incident.note",
+      "value": "resolution_note",
+      "source": "backend/app/api/v1/endpoints/incidents.py:29",
+      "match": "resolution_note"
+    },
+    {
+      "id": "tier.cerebras.name",
+      "value": "cerebras",
+      "source": "backend/app/router/tiers.py:42",
+      "match": "\"cerebras\""
+    },
+    {
+      "id": "tier.cerebras.priority",
+      "value": 1,
+      "source": "backend/app/router/tiers.py:45",
+      "match": "priority=1"
+    },
+    {
+      "id": "tier.cerebras.model",
+      "value": "llama3.1-8b",
+      "source": "backend/app/router/providers/cerebras.py:18",
+      "match": "llama3.1-8b"
+    },
+    {
+      "id": "tier.cerebras.rpm",
+      "value": 30,
+      "source": "backend/app/router/tiers.py:46",
+      "match": "rpm=30"
+    },
+    {
+      "id": "tier.cerebras.rpd",
+      "value": 14400,
+      "source": "backend/app/router/tiers.py:47",
+      "match": "rpd=14_400"
+    },
+    {
+      "id": "tier.groq.name",
+      "value": "groq",
+      "source": "backend/app/router/tiers.py:50",
+      "match": "\"groq\""
+    },
+    {
+      "id": "tier.groq.priority",
+      "value": 2,
+      "source": "backend/app/router/tiers.py:53",
+      "match": "priority=2"
+    },
+    {
+      "id": "tier.groq.model",
+      "value": "llama-3.1-8b-instant",
+      "source": "backend/app/router/providers/groq.py:18",
+      "match": "llama-3.1-8b-instant"
+    },
+    {
+      "id": "tier.groq.rpm",
+      "value": 30,
+      "source": "backend/app/router/tiers.py:54",
+      "match": "rpm=30"
+    },
+    {
+      "id": "tier.groq.rpd",
+      "value": 14400,
+      "source": "backend/app/router/tiers.py:55",
+      "match": "rpd=14_400"
+    },
+    {
+      "id": "tier.gemini.name",
+      "value": "gemini",
+      "source": "backend/app/router/tiers.py:58",
+      "match": "\"gemini\""
+    },
+    {
+      "id": "tier.gemini.priority",
+      "value": 3,
+      "source": "backend/app/router/tiers.py:61",
+      "match": "priority=3"
+    },
+    {
+      "id": "tier.gemini.model",
+      "value": "gemini-2.0-flash",
+      "source": "backend/app/router/providers/gemini.py:18",
+      "match": "gemini-2.0-flash"
+    },
+    {
+      "id": "tier.gemini.rpm",
+      "value": 15,
+      "source": "backend/app/router/tiers.py:62",
+      "match": "rpm=15"
+    },
+    {
+      "id": "tier.gemini.rpd",
+      "value": 1500,
+      "source": "backend/app/router/tiers.py:63",
+      "match": "rpd=1_500"
+    },
+    {
+      "id": "tier.ollama.name",
+      "value": "ollama",
+      "source": "backend/app/router/tiers.py:66",
+      "match": "\"ollama\""
+    },
+    {
+      "id": "tier.ollama.priority",
+      "value": 4,
+      "source": "backend/app/router/tiers.py:69",
+      "match": "priority=4"
+    },
+    {
+      "id": "tier.ollama.model",
+      "value": "llama3.2:3b",
+      "source": "backend/app/router/providers/ollama.py:13",
+      "match": "llama3.2:3b"
+    },
+    {
+      "id": "tier.ollama.is_floor",
+      "value": true,
+      "source": "backend/app/router/tiers.py:72",
+      "match": "is_floor=True"
+    },
+    {
+      "id": "router.floor_tier",
+      "value": "ollama",
+      "source": "backend/app/router/selector.py:23",
+      "match": "ollama"
+    },
+    {
+      "id": "router.skip.disabled",
+      "value": "disabled",
+      "source": "backend/app/router/selector.py:53",
+      "match": "disabled"
+    },
+    {
+      "id": "router.skip.unavailable",
+      "value": "unavailable",
+      "source": "backend/app/router/selector.py:55",
+      "match": "unavailable"
+    },
+    {
+      "id": "router.skip.quality-gate",
+      "value": "quality-gate",
+      "source": "backend/app/router/selector.py:57",
+      "match": "quality-gate"
+    },
+    {
+      "id": "router.skip.unhealthy",
+      "value": "unhealthy",
+      "source": "backend/app/router/selector.py:61",
+      "match": "unhealthy"
+    },
+    {
+      "id": "router.skip.rate-limited",
+      "value": "rate-limited",
+      "source": "backend/app/router/selector.py:68",
+      "match": "rate-limited"
+    },
+    {
+      "id": "router.skip.daily-quota-exhausted",
+      "value": "daily-quota-exhausted",
+      "source": "backend/app/router/selector.py:71",
+      "match": "daily-quota-exhausted"
+    },
+    {
+      "id": "router.floor_exempt",
+      "value": "floor",
+      "source": "backend/app/router/selector.py:63",
+      "match": "is_floor",
+      "note": "checked after enabled/available/quality-gate/unhealthy, before the rate-limit and daily-quota gates"
+    },
+    {
+      "id": "router.exhausted",
+      "value": "RouterExhausted",
+      "source": "backend/app/router/selector.py:26",
+      "match": "RouterExhausted"
+    },
+    {
+      "id": "router.floor_reason",
+      "value": "floor",
+      "source": "backend/app/router/selector.py:64",
+      "match": "floor"
+    },
+    {
+      "id": "router.lua",
+      "value": "token bucket",
+      "source": "backend/app/router/rate_limiter.py:23",
+      "match": "TOKEN_BUCKET_LUA",
+      "note": "Redis Lua token bucket"
+    },
+    {
+      "id": "router.daily",
+      "value": "daily quota",
+      "source": "backend/app/router/rate_limiter.py:7",
+      "match": "daily quota"
+    },
+    {
+      "id": "celery.queues",
+      "value": [
+        "default",
+        "ingestion",
+        "eval",
+        "diagnostic"
+      ],
+      "source": "backend/app/core/celery_app.py:17",
+      "match": "(\"default\", \"ingestion\", \"eval\", \"diagnostic\")"
+    },
+    {
+      "id": "celery.max_retries",
+      "value": 3,
+      "source": "backend/app/core/celery_app.py:27",
+      "match": "3"
+    },
+    {
+      "id": "celery.backoff",
+      "value": "exponential",
+      "source": "backend/app/core/celery_app.py:28",
+      "match": "exponential"
+    },
+    {
+      "id": "celery.jitter",
+      "value": true,
+      "source": "backend/app/core/celery_app.py:30",
+      "match": "True"
+    },
+    {
+      "id": "celery.acks_late",
+      "value": true,
+      "source": "backend/app/core/celery_app.py:31",
+      "match": "True"
+    },
+    {
+      "id": "beat.drift_s",
+      "value": 300,
+      "source": "backend/app/core/celery_app.py:68",
+      "match": "300"
+    },
+    {
+      "id": "beat.health_s",
+      "value": 60,
+      "source": "backend/app/core/celery_app.py:69",
+      "match": "60"
+    },
+    {
+      "id": "beat.golden_s",
+      "value": 86400,
+      "source": "backend/app/core/celery_app.py:70",
+      "match": "86400"
+    },
+    {
+      "id": "beat.golden_stale_days",
+      "value": 7,
+      "source": "backend/app/tasks/scheduled.py:19",
+      "match": "7"
+    },
+    {
+      "id": "fe.step_ms",
+      "value": 750,
+      "source": "frontend/src/features/diagnostic-swarm/hooks/useTrailReplay.ts:3",
+      "match": "750"
+    },
+    {
+      "id": "fe.step_label",
+      "value": "step ▶",
+      "source": "frontend/src/features/diagnostic-swarm/IncidentTrailReplay.tsx:58",
+      "match": "step ▶"
+    },
+    {
+      "id": "fe.play_label",
+      "value": "▶ play",
+      "source": "frontend/src/features/diagnostic-swarm/IncidentTrailReplay.tsx:50",
+      "match": "▶ play"
+    },
+    {
+      "id": "fe.edge_pulse",
+      "value": "1.4s",
+      "source": "frontend/src/features/diagnostic-swarm/edges/AnimatedEdge.tsx:54",
+      "match": "1.4s"
+    },
+    {
+      "id": "fe.fall_formula",
+      "value": "Math.min(0.4 * target + 0.3, 2.5)",
+      "source": "frontend/src/features/router-cascade/components/FallbackAnimation.tsx:42",
+      "match": "Math.min(0.4 * target + 0.3, 2.5)"
+    },
+    {
+      "id": "fe.gauge_sweep",
+      "value": 0.9,
+      "source": "frontend/src/features/health-score/HealthGauge.tsx:154",
+      "match": "0.9"
+    },
+    {
+      "id": "fe.schema_mismatch",
+      "value": "[api] schema mismatch",
+      "source": "frontend/src/api/client.ts:135",
+      "match": "[api] schema mismatch"
+    },
+    {
+      "id": "token.surface",
+      "value": "#0b0e14",
+      "source": "frontend/tailwind.config.ts:25",
+      "match": "#0b0e14"
+    },
+    {
+      "id": "token.raised",
+      "value": "#12161f",
+      "source": "frontend/tailwind.config.ts:26",
+      "match": "#12161f"
+    },
+    {
+      "id": "token.border",
+      "value": "#1e2530",
+      "source": "frontend/tailwind.config.ts:27",
+      "match": "#1e2530"
+    },
+    {
+      "id": "token.fg",
+      "value": "#e6e9ef",
+      "source": "frontend/tailwind.config.ts:30",
+      "match": "#e6e9ef"
+    },
+    {
+      "id": "token.muted",
+      "value": "#94a3b8",
+      "source": "frontend/tailwind.config.ts:31",
+      "match": "#94a3b8"
+    },
+    {
+      "id": "token.healthy",
+      "value": "#22c55e",
+      "source": "frontend/tailwind.config.ts:12",
+      "match": "#22c55e"
+    },
+    {
+      "id": "token.degraded",
+      "value": "#eab308",
+      "source": "frontend/tailwind.config.ts:14",
+      "match": "#eab308"
+    },
+    {
+      "id": "token.down",
+      "value": "#ef4444",
+      "source": "frontend/tailwind.config.ts:16",
+      "match": "#ef4444"
+    },
+    {
+      "id": "fe.dep.react",
+      "value": "19",
+      "source": "frontend/package.json:20",
+      "match": "19"
+    },
+    {
+      "id": "fe.dep.vite",
+      "value": "8",
+      "source": "frontend/package.json:46",
+      "match": "8"
+    },
+    {
+      "id": "fe.dep.xyflow",
+      "value": "@xyflow/react",
+      "source": "frontend/package.json:16",
+      "match": "@xyflow/react"
+    },
+    {
+      "id": "fe.dep.framer",
+      "value": "framer-motion",
+      "source": "frontend/package.json:19",
+      "match": "framer-motion"
+    },
+    {
+      "id": "fe.dep.zod",
+      "value": "zod",
+      "source": "frontend/package.json:25",
+      "match": "zod"
+    },
+    {
+      "id": "fe.dep.tanstack",
+      "value": "@tanstack/react-query",
+      "source": "frontend/package.json:15",
+      "match": "@tanstack/react-query"
+    },
+    {
+      "id": "seed.question",
+      "value": "What is the refund policy?",
+      "source": "backend/app/eval/synthetic_qa.py:18",
+      "match": "What is the refund policy?"
+    },
+    {
+      "id": "seed.context",
+      "value": "Our refund policy allows customers to request a full refund within 30 days of purchase.",
+      "source": "backend/app/eval/synthetic_qa.py:21",
+      "match": "Our refund policy allows customers to request a full refund within 30 days of purchase."
+    },
+    {
+      "id": "seed.answer_good",
+      "value": "Refunds are available within 30 days of purchase.",
+      "source": "backend/app/eval/synthetic_qa.py:19",
+      "match": "Refunds are available within 30 days of purchase."
+    },
+    {
+      "id": "seed.hallucinated",
+      "value": "Refunds are processed via carrier pigeon within three lunar cycles.",
+      "source": "backend/app/eval/synthetic_qa.py:61",
+      "match": "Refunds are processed via carrier pigeon within three lunar cycles."
+    },
+    {
+      "id": "seed.fault_rate",
+      "value": 0.3,
+      "source": "backend/scripts/seed_synthetic_traces.py:40",
+      "match": "0.30"
+    },
+    {
+      "id": "seed.fault_kinds",
+      "value": [
+        "latency",
+        "low_recall",
+        "hallucination"
+      ],
+      "source": "backend/scripts/seed_synthetic_traces.py:41",
+      "match": "[\"latency\", \"low_recall\", \"hallucination\"]"
+    },
+    {
+      "id": "seed.span.generation",
+      "value": "rag.generation",
+      "source": "backend/scripts/seed_synthetic_traces.py:101",
+      "match": "rag.generation"
+    },
+    {
+      "id": "seed.attr.completion",
+      "value": "gen_ai.completion",
+      "source": "backend/scripts/seed_synthetic_traces.py:108",
+      "match": "gen_ai.completion"
+    },
+    {
+      "id": "seed.attr.model",
+      "value": "gen_ai.request.model",
+      "source": "backend/scripts/seed_synthetic_traces.py:106",
+      "match": "gen_ai.request.model"
+    },
+    {
+      "id": "seed.attr.documents",
+      "value": "retrieval.documents",
+      "source": "backend/scripts/seed_synthetic_traces.py:94",
+      "match": "retrieval.documents"
+    },
+    {
+      "id": "seed.span.retrieval",
+      "value": "rag.retrieval",
+      "source": "backend/scripts/seed_synthetic_traces.py:86",
+      "match": "rag.retrieval"
+    },
+    {
+      "id": "seed.hallucination_status",
+      "value": 2,
+      "source": "backend/scripts/seed_synthetic_traces.py:70",
+      "match": "err = 2",
+      "note": "injected hallucination traces carry span status 2 (ERROR)"
+    },
+    {
+      "id": "tests.count",
+      "value": 28,
+      "source": "backend/tests/integration/test_*.py",
+      "method": "grep -c '^\\s*(async )?def test_' over the integration test files"
+    },
+    {
+      "id": "tests.files",
+      "value": 7,
+      "source": "backend/tests/integration/test_*.py",
+      "method": "file count"
+    },
+    {
+      "id": "tests.swarm_file",
+      "value": "tests/integration/test_diagnostic_swarm.py",
+      "source": "backend/tests/integration/test_diagnostic_swarm.py:1",
+      "match": "Diagnostic swarm integration tests"
+    },
+    {
+      "id": "scenario.A",
+      "value": "Scenario A",
+      "source": "backend/tests/integration/test_diagnostic_swarm.py:40",
+      "match": "Scenario A"
+    },
+    {
+      "id": "scenario.B",
+      "value": "Scenario B",
+      "source": "backend/tests/integration/test_diagnostic_swarm.py:77",
+      "match": "Scenario B"
+    },
+    {
+      "id": "scenario.C",
+      "value": "Scenario C",
+      "source": "backend/tests/integration/test_diagnostic_swarm.py:130",
+      "match": "Scenario C"
+    },
+    {
+      "id": "stack.fastapi",
+      "value": "FastAPI",
+      "source": "backend/pyproject.toml:8",
+      "match": "fastapi"
+    },
+    {
+      "id": "stack.langgraph",
+      "value": "LangGraph",
+      "source": "backend/pyproject.toml:25",
+      "match": "langgraph"
+    },
+    {
+      "id": "stack.celery",
+      "value": "Celery",
+      "source": "backend/pyproject.toml:21",
+      "match": "celery"
+    },
+    {
+      "id": "stack.clickhouse",
+      "value": "ClickHouse",
+      "source": "backend/pyproject.toml:19",
+      "match": "clickhouse"
+    },
+    {
+      "id": "stack.ragas",
+      "value": "RAGAS",
+      "source": "backend/pyproject.toml:33",
+      "match": "ragas"
+    },
+    {
+      "id": "stack.deepeval",
+      "value": "DeepEval",
+      "source": "backend/pyproject.toml:34",
+      "match": "deepeval"
+    },
+    {
+      "id": "stack.reactflow",
+      "value": "React Flow",
+      "source": "README.md:213",
+      "match": "React Flow"
+    },
+    {
+      "id": "stack.ollama",
+      "value": "Ollama",
+      "source": "backend/app/router/providers/ollama.py:1",
+      "match": "Ollama"
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+/* Deterministic stage: no CSS animation or transition may run, ever. */
+*, *::before, *::after {
+  animation: none !important;
+  transition: none !important;
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: #0b0e14;
+  overflow: hidden;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: geometricPrecision;
+  font-kerning: normal;
+  font-synthesis: none;
+}
+
+#stage {
+  position: relative;
+  width: 1080px;
+  height: 1350px;
+  overflow: hidden;
+  background: var(--ink, #0b0e14);
+  color: var(--text, #e6e9ef);
+  contain: strict;
+}
+
+.scene, .layer {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1080px;
+  height: 1350px;
+}
+
+.tx, .chip, .stamp {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum" 1;
+}
+
+.g svg { display: block; }
+
+#dev {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  padding: 8px 12px;
+  background: rgba(11, 14, 20, 0.92);
+  font: 14px "Geist Mono Variable", monospace;
+  color: #e6e9ef;
+  z-index: 10;
+}
+#dev[hidden] { display: none; }
+#dev input { flex: 1; }

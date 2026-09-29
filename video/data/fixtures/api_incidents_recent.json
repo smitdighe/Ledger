@@ -1,0 +1,50 @@
+{
+  "_provenance": "mode-a",
+  "_how": "video/tools/run_scenarios.py: disposable postgres:16-alpine + redis:7-alpine, alembic upgrade head, scenarios replayed from backend/tests/integration/test_diagnostic_swarm.py with use_llm=False",
+  "path": "/api/v1/incidents",
+  "params": {
+    "limit": 5
+  },
+  "status": 200,
+  "body": {
+    "count": 4,
+    "incidents": [
+      {
+        "id": "062b3e8a-4e87-431f-9f01-f1d95152e709",
+        "trace_id": "swarm-mixed",
+        "root_cause": null,
+        "status": "open",
+        "classification_confidence": 1.0,
+        "remediation_action": "human_review_required",
+        "created_at": "2026-09-29T13:38:06.125125+00:00"
+      },
+      {
+        "id": "5a7fa2a0-1d26-4a8e-a558-dd6341f1ac7a",
+        "trace_id": "swarm-prompt",
+        "root_cause": "prompt_regression",
+        "status": "resolved",
+        "classification_confidence": 1.0,
+        "remediation_action": "rollback:already_applied",
+        "created_at": "2026-09-29T13:37:57.472120+00:00"
+      },
+      {
+        "id": "60e04c97-fa54-46b8-aa10-3a69acc99061",
+        "trace_id": "swarm-retrieval",
+        "root_cause": "retrieval_failure",
+        "status": "resolved",
+        "classification_confidence": 0.88,
+        "remediation_action": "reindex:triggered_stub",
+        "created_at": "2026-09-29T13:37:43.821175+00:00"
+      },
+      {
+        "id": "295b36a3-d24d-499c-a15c-b6762c9f93b2",
+        "trace_id": "swarm-retrieval",
+        "root_cause": "retrieval_failure",
+        "status": "resolved",
+        "classification_confidence": 0.88,
+        "remediation_action": "reindex:triggered_stub",
+        "created_at": "2026-09-29T13:37:41.617872+00:00"
+      }
+    ]
+  }
+}

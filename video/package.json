@@ -1,0 +1,33 @@
+{
+  "name": "ledger-launch-video",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Ledger LinkedIn launch video: HTML/SVG + GSAP timeline, frame-captured and encoded with FFmpeg.",
+  "author": "Smit Dighe",
+  "license": "UNLICENSED",
+  "type": "module",
+  "scripts": {
+    "facts": "node tools/run-py.js tools/extract_facts.py",
+    "scenarios": "node tools/run-py.js tools/run_scenarios.py",
+    "capture-ui": "node tools/capture-ui.js",
+    "serve": "node tools/serve.js",
+    "audio": "node tools/render-audio.js",
+    "record": "node record.js",
+    "record:draft": "node record.js --draft",
+    "encode": "node tools/encode.js",
+    "qa": "node tools/qa.js",
+    "still": "node tools/still.js",
+    "strips": "node tools/strips.js"
+  },
+  "engines": {
+    "node": ">=20.19"
+  },
+  "devDependencies": {
+    "@fontsource-variable/geist": "^5.3.0",
+    "@fontsource-variable/geist-mono": "^5.3.0",
+    "ffmpeg-static": "^5.3.0",
+    "ffprobe-static": "^3.1.0",
+    "gsap": "^3.15.0",
+    "playwright": "^1.63.0"
+  }
+}

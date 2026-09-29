@@ -1,0 +1,359 @@
+{
+  "_provenance": "mode-a",
+  "_how": "video/tools/run_scenarios.py: disposable postgres:16-alpine + redis:7-alpine, alembic upgrade head, scenarios replayed from backend/tests/integration/test_diagnostic_swarm.py with use_llm=False",
+  "scenario": "B",
+  "test": "test_prompt_regression_triggers_rollback",
+  "eval_scores": {
+    "faithfulness": 0.25,
+    "answer_relevance": 0.3,
+    "hallucination": 0.6,
+    "retrieval_precision": 0.9,
+    "context_recall": 0.9
+  },
+  "drift": {
+    "metric": "faithfulness",
+    "window_mean": 0.575,
+    "baseline": 0.85,
+    "threshold": 0.15,
+    "drifted": true,
+    "n": 20,
+    "golden_set_version": null,
+    "higher_is_worse": false
+  },
+  "flag": {
+    "flagged": true,
+    "reasons": [
+      "low_faithfulness",
+      "low_answer_relevance",
+      "high_hallucination",
+      "faithfulness_drift"
+    ]
+  },
+  "faithfulness_history": [
+    {
+      "trace_id": "hist-before",
+      "score": 0.9,
+      "generator_model": "groq/llama-3.1-8b",
+      "created_at": "2026-09-27T13:37:56.937194+00:00"
+    },
+    {
+      "trace_id": "hist-before",
+      "score": 0.9,
+      "generator_model": "groq/llama-3.1-8b",
+      "created_at": "2026-09-27T13:37:56.937194+00:00"
+    },
+    {
+      "trace_id": "hist-before",
+      "score": 0.9,
+      "generator_model": "groq/llama-3.1-8b",
+      "created_at": "2026-09-27T13:37:56.937194+00:00"
+    },
+    {
+      "trace_id": "hist-before",
+      "score": 0.9,
+      "generator_model": "groq/llama-3.1-8b",
+      "created_at": "2026-09-27T13:37:56.937194+00:00"
+    },
+    {
+      "trace_id": "hist-before",
+      "score": 0.9,
+      "generator_model": "groq/llama-3.1-8b",
+      "created_at": "2026-09-27T13:37:56.937194+00:00"
+    },
+    {
+      "trace_id": "hist-before",
+      "score": 0.9,
+      "generator_model": "groq/llama-3.1-8b",
+      "created_at": "2026-09-27T13:37:56.937194+00:00"
+    },
+    {
+      "trace_id": "hist-before",
+      "score": 0.9,
+      "generator_model": "groq/llama-3.1-8b",
+      "created_at": "2026-09-27T13:37:56.937194+00:00"
+    },
+    {
+      "trace_id": "hist-before",
+      "score": 0.9,
+      "generator_model": "groq/llama-3.1-8b",
+      "created_at": "2026-09-27T13:37:56.937194+00:00"
+    },
+    {
+      "trace_id": "hist-before",
+      "score": 0.9,
+      "generator_model": "groq/llama-3.1-8b",
+      "created_at": "2026-09-27T13:37:56.937194+00:00"
+    },
+    {
+      "trace_id": "hist-before",
+      "score": 0.9,
+      "generator_model": "groq/llama-3.1-8b",
+      "created_at": "2026-09-27T13:37:56.937194+00:00"
+    },
+    {
+      "trace_id": "hist-after",
+      "score": 0.25,
+      "generator_model": null,
+      "created_at": "2026-09-29T13:37:56.937194+00:00"
+    },
+    {
+      "trace_id": "hist-after",
+      "score": 0.25,
+      "generator_model": null,
+      "created_at": "2026-09-29T13:37:56.937194+00:00"
+    },
+    {
+      "trace_id": "hist-after",
+      "score": 0.25,
+      "generator_model": null,
+      "created_at": "2026-09-29T13:37:56.937194+00:00"
+    },
+    {
+      "trace_id": "hist-after",
+      "score": 0.25,
+      "generator_model": null,
+      "created_at": "2026-09-29T13:37:56.937194+00:00"
+    },
+    {
+      "trace_id": "hist-after",
+      "score": 0.25,
+      "generator_model": null,
+      "created_at": "2026-09-29T13:37:56.937194+00:00"
+    },
+    {
+      "trace_id": "hist-after",
+      "score": 0.25,
+      "generator_model": null,
+      "created_at": "2026-09-29T13:37:56.937194+00:00"
+    },
+    {
+      "trace_id": "hist-after",
+      "score": 0.25,
+      "generator_model": null,
+      "created_at": "2026-09-29T13:37:56.937194+00:00"
+    },
+    {
+      "trace_id": "hist-after",
+      "score": 0.25,
+      "generator_model": null,
+      "created_at": "2026-09-29T13:37:56.937194+00:00"
+    },
+    {
+      "trace_id": "hist-after",
+      "score": 0.25,
+      "generator_model": null,
+      "created_at": "2026-09-29T13:37:56.937194+00:00"
+    },
+    {
+      "trace_id": "hist-after",
+      "score": 0.25,
+      "generator_model": null,
+      "created_at": "2026-09-29T13:37:56.937194+00:00"
+    }
+  ],
+  "prompt_versions_before": [
+    {
+      "version": 1,
+      "is_active": true,
+      "created_at": "2026-09-26T13:37:56.937194+00:00"
+    },
+    {
+      "version": 2,
+      "is_active": false,
+      "created_at": "2026-09-28T13:37:56.937194+00:00"
+    }
+  ],
+  "prompt_versions_after": {
+    "1": true,
+    "2": false
+  },
+  "rollback_repeat": [
+    {
+      "tool": "rollback",
+      "status": "already_applied",
+      "prompt_name": "rag_default",
+      "active_version": 1,
+      "changed": false
+    },
+    {
+      "tool": "rollback",
+      "status": "already_applied",
+      "prompt_name": "rag_default",
+      "active_version": 1,
+      "changed": false
+    }
+  ],
+  "nodes_ran": [
+    "classifier",
+    "model_diagnostic",
+    "prompt_diagnostic",
+    "decision",
+    "remediation"
+  ],
+  "final": {
+    "trace_id": "swarm-prompt",
+    "signal": "eval_flag",
+    "eval_results": {
+      "faithfulness": 0.25,
+      "answer_relevance": 0.3,
+      "hallucination": 0.6,
+      "retrieval_precision": 0.9,
+      "context_recall": 0.9
+    },
+    "trace_context": {
+      "retrieval_score": 0.9,
+      "generator_model": "groq/llama-3.1-8b",
+      "prompt_name": "rag_default",
+      "index_name": "default"
+    },
+    "use_llm": false,
+    "classification": {
+      "candidates": [
+        "prompt_regression",
+        "model_degradation"
+      ],
+      "targets": [
+        "prompt_diagnostic",
+        "model_diagnostic"
+      ],
+      "confidence": 0.75,
+      "ambiguous": false,
+      "retrieval_strength": 0.1,
+      "generation_strength": 0.75,
+      "llm_opinion": null
+    },
+    "findings": [
+      {
+        "node": "model_diagnostic",
+        "root_cause_candidate": null,
+        "confidence": 0.0,
+        "supporting_evidence": {
+          "generator_model": "groq/llama-3.1-8b",
+          "generator_tier": "groq",
+          "tier_quality": 0.9,
+          "best_other_tier_quality": null,
+          "all_tier_scores": {
+            "groq": 0.9
+          }
+        }
+      },
+      {
+        "node": "prompt_diagnostic",
+        "root_cause_candidate": "prompt_regression",
+        "confidence": 1.0,
+        "supporting_evidence": {
+          "prompt_name": "rag_default",
+          "regressed_version": 2,
+          "previous_version": 1,
+          "changed_at": "2026-09-28T13:37:56.937194+00:00",
+          "faithfulness_before": 0.9,
+          "faithfulness_after": 0.25,
+          "drop": 0.65
+        }
+      }
+    ],
+    "trail": [
+      {
+        "node": "classifier",
+        "summary": "targets=['prompt_diagnostic', 'model_diagnostic'] conf=0.75 ambiguous=False",
+        "data": {
+          "candidates": [
+            "prompt_regression",
+            "model_degradation"
+          ],
+          "targets": [
+            "prompt_diagnostic",
+            "model_diagnostic"
+          ],
+          "confidence": 0.75,
+          "ambiguous": false,
+          "retrieval_strength": 0.1,
+          "generation_strength": 0.75,
+          "llm_opinion": null
+        }
+      },
+      {
+        "node": "model_diagnostic",
+        "summary": "model_degradation confidence=0.00 (tier=groq score=0.9)",
+        "data": {
+          "generator_model": "groq/llama-3.1-8b",
+          "generator_tier": "groq",
+          "tier_quality": 0.9,
+          "best_other_tier_quality": null,
+          "all_tier_scores": {
+            "groq": 0.9
+          }
+        }
+      },
+      {
+        "node": "prompt_diagnostic",
+        "summary": "prompt_regression confidence=1.00 (drop=0.65 after v2)",
+        "data": {
+          "prompt_name": "rag_default",
+          "regressed_version": 2,
+          "previous_version": 1,
+          "changed_at": "2026-09-28T13:37:56.937194+00:00",
+          "faithfulness_before": 0.9,
+          "faithfulness_after": 0.25,
+          "drop": 0.65
+        }
+      },
+      {
+        "node": "decision",
+        "summary": "chose prompt_regression @ 1.00",
+        "data": {
+          "reason": "selected",
+          "chosen": {
+            "node": "prompt_diagnostic",
+            "root_cause_candidate": "prompt_regression",
+            "confidence": 1.0,
+            "supporting_evidence": {
+              "prompt_name": "rag_default",
+              "regressed_version": 2,
+              "previous_version": 1,
+              "changed_at": "2026-09-28T13:37:56.937194+00:00",
+              "faithfulness_before": 0.9,
+              "faithfulness_after": 0.25,
+              "drop": 0.65
+            }
+          }
+        }
+      },
+      {
+        "node": "remediation",
+        "summary": "action=rollback:already_applied status=resolved",
+        "data": {
+          "tool_result": {
+            "tool": "rollback",
+            "status": "already_applied",
+            "prompt_name": "rag_default",
+            "active_version": 1,
+            "changed": false
+          },
+          "error": null
+        }
+      }
+    ],
+    "chosen_root_cause": "prompt_regression",
+    "chosen_confidence": 1.0,
+    "chosen_finding": {
+      "node": "prompt_diagnostic",
+      "root_cause_candidate": "prompt_regression",
+      "confidence": 1.0,
+      "supporting_evidence": {
+        "prompt_name": "rag_default",
+        "regressed_version": 2,
+        "previous_version": 1,
+        "changed_at": "2026-09-28T13:37:56.937194+00:00",
+        "faithfulness_before": 0.9,
+        "faithfulness_after": 0.25,
+        "drop": 0.65
+      }
+    },
+    "needs_human_review": false,
+    "remediation_action": "rollback:already_applied",
+    "remediation_status": "resolved",
+    "incident_id": "5a7fa2a0-1d26-4a8e-a558-dd6341f1ac7a",
+    "error": null
+  }
+}

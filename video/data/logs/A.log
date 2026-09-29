@@ -1,0 +1,16 @@
+2026-09-29 19:07:39 [info     ] graph.run                      eval_results={'faithfulness': 0.92, 'answer_relevance': 0.9, 'hallucination': 0.0, 'retrieval_precision': 0.15, 'context_recall': 0.2} signal=eval_flag trace_id=swarm-retrieval
+2026-09-29 19:07:39 [info     ] node.classifier                ambiguous=False candidates=['retrieval_failure', 'index_staleness'] confidence=0.88 generation_strength=0.1 llm_opinion=None retrieval_strength=0.88 targets=['retrieval_diagnostic', 'index_diagnostic'] trace_id=swarm-retrieval
+2026-09-29 19:07:39 [info     ] node.retrieval_diagnostic      confidence=0.88 context_recall=0.2 retrieval_precision=0.15 retrieval_score=0.12 trace_id=swarm-retrieval weakest_signal=0.12
+2026-09-29 19:07:41 [warning  ] index_diagnostic.trend_query_failed error='Network Error: Cannot connect to host 127.0.0.1:1 ssl:default [The remote computer refused the network connection]'
+2026-09-29 19:07:41 [info     ] node.index_diagnostic          confidence=0.352 ever_reindexed=False index_age_seconds=None index_name=default recent_retrieval_trend=None stale=False this_retrieval_score=0.12 trace_id=swarm-retrieval
+2026-09-29 19:07:41 [info     ] node.decision                  chosen=retrieval_failure confidence=0.88 trace_id=swarm-retrieval
+2026-09-29 19:07:41 [warning  ] tool.reindex.STUB              index=default last_reindex=2026-09-29T13:37:41.449914+00:00 note='STUB — no real reindex performed; flag/timestamp written only'
+2026-09-29 19:07:41 [info     ] incident.written               action=reindex:triggered_stub incident_id=295b36a3-d24d-499c-a15c-b6762c9f93b2 root=retrieval_failure status=resolved trace_id=swarm-retrieval
+2026-09-29 19:07:41 [info     ] graph.run                      eval_results={'faithfulness': 0.92, 'answer_relevance': 0.9, 'hallucination': 0.0, 'retrieval_precision': 0.15, 'context_recall': 0.2} signal=eval_flag trace_id=swarm-retrieval
+2026-09-29 19:07:41 [info     ] node.classifier                ambiguous=False candidates=['retrieval_failure', 'index_staleness'] confidence=0.88 generation_strength=0.1 llm_opinion=None retrieval_strength=0.88 targets=['retrieval_diagnostic', 'index_diagnostic'] trace_id=swarm-retrieval
+2026-09-29 19:07:41 [info     ] node.retrieval_diagnostic      confidence=0.88 context_recall=0.2 retrieval_precision=0.15 retrieval_score=0.12 trace_id=swarm-retrieval weakest_signal=0.12
+2026-09-29 19:07:43 [warning  ] index_diagnostic.trend_query_failed error='Network Error: Cannot connect to host 127.0.0.1:1 ssl:default [The remote computer refused the network connection]'
+2026-09-29 19:07:43 [info     ] node.index_diagnostic          confidence=0.352 ever_reindexed=True index_age_seconds=0.302119 index_name=default recent_retrieval_trend=None stale=False this_retrieval_score=0.12 trace_id=swarm-retrieval
+2026-09-29 19:07:43 [info     ] node.decision                  chosen=retrieval_failure confidence=0.88 trace_id=swarm-retrieval
+2026-09-29 19:07:43 [warning  ] tool.reindex.STUB              index=default last_reindex=2026-09-29T13:37:43.804665+00:00 note='STUB — no real reindex performed; flag/timestamp written only'
+2026-09-29 19:07:43 [info     ] incident.written               action=reindex:triggered_stub incident_id=60e04c97-fa54-46b8-aa10-3a69acc99061 root=retrieval_failure status=resolved trace_id=swarm-retrieval
